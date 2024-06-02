@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queen Dynasty Studio - Cart</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- preload images -->
+  <link rel="preload" as="image" href="./assets/images/logo.png">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="alert" style="color: rgb(0, 0, 0); background-color: rgb(242, 156, 190);">
+      <p class="alert-text">Thank you for being with us!!</p>
+    </div>
+    <div class="header-top" data-header>
+      <div class="container">
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+        <div class="input-wrapper">
+          <input type="search" name="search" class="search-field" style=" border-color: rgb(0, 0, 0); ">
+          <button class="search-submit" aria-label="search">
+            <ion-icon name="search-outline" aria-hidden="true"
+              style="background-color: rgb(0, 0, 0); color: rgb(0, 0, 0);"></ion-icon>
+          </button>
+        </div>
+        <a href="../glowing-master/assets/images/logo.jpg" class="logo">
+          <img src="./assets/images/logo.jpg" width="179" height="26" alt="Glowing">
+        </a>
+        <div class="header-actions">
+          <button class="header-action-btn">
+            <ion-icon name="person-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+          </button>
+          <button class="header-action-btn" aria-label="favourite item">
+            <ion-icon name="star-outline" aria-hidden="true" style=" color: rgb(242, 156, 190);"></ion-icon>
+          </button>
+          <button id="theme-toggle" class="header-action-btn" aria-label="cart">
+            <a href="cart.html">
+              <ion-icon name="cart" aria-hidden="true" style=" color: rgb(242, 156, 190); border-radius: 16;">
+              </ion-icon>
+            </a>
+          </button>
+        </div>
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li><a href="index.html" class="navbar-link has-after" style=" color: rgb(242, 156, 190);">Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- CART -->
+  <main>
+    <section class="section cart" id="cart">
+      <div class="container">
+        <ul id="cart-items" class="has-scrollbar">
+          <!-- Cart items will be dynamically added here -->
+        </ul>
+        <div>
+          <div class="cart-summary">
+            <div class="totals">
+              <br><br>
+              <label>
+                <h1><b>Grand Total</b></h1>
+              </label>
+              <div class="totals-value" id="cart-total"><i><b>0.00</b></i></div>
+            </div>
+            <br>
+            <button id="checkout-btn" class="btn btn-primary"
+              style="background-color: rgb(242, 156, 190);color: white;">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="checkout-form" style="display: none;">
+    <h3 class="h3 section-title">Checkout Information</h3>
+    <form id="checkout-details">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required><br>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required><br>
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required><br>
+
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state" required><br>
+
+      <label for="zip">Zip Code:</label>
+      <input type="text" id="zip" name="zip" required><br>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title" style="color: rgb(242, 156, 190);">Company</p>
+          </li>
+          <li>
+            <p class="footer-list-text">Find a location nearest you. <br> <a href="#" class="link"
+                style="color: rgb(242, 156, 190);">Our Stores</a></p>
+          </li>
+          <li>
+            <p class="footer-list-text bold" style="color: rgb(242, 156, 190);">+391 (0)35 2568 4593</p>
+          </li>
+          <li>
+            <p class="footer-list-text">hello@domain.com</p>
+          </li>
+        </ul>
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title" style="color: rgb(242, 156, 190);">Useful links</p>
+          </li>
+          <li><a href="#" class="footer-link">New Products</a></li>
+          <li><a href="#" class="footer-link">Best Sellers</a></li>
+          <li><a href="#" class="footer-link">Bundle & Save</a></li>
+          <li><a href="#" class="footer-link">Online Gift Card</a></li>
+          <li><a href="sign-up-creator.html" class="footer-link">Become a Creator</a></li>
+        </ul>
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title" style="color: rgb(242, 156, 190);">Information</p>
+          </li>
+          <li><a href="#" class="footer-link">Start a Return</a></li>
+          <li><a href="#" class="footer-link">Contact Us</a></li>
+          <li><a href="#" class="footer-link">Shipping FAQ</a></li>
+          <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+          <li><a href="#" class="footer-link">Privacy Policy</a></li>
+        </ul>
+        <div class="footer-list">
+          <p class="newsletter-title" style="color: rgb(242, 156, 190);">Good emails.</p>
+          <p class="newsletter-text">Enter your email below to be the first to know about new collections and product
+            launches.</p>
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Enter your email address" required
+              class="email-field">
+            <button type="submit" class="btn btn-primary"
+              style="color: rgb(255, 255, 255); background-color: rgb(242, 156, 190);">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="wrapper">
+          <p class="copyright">&copy; 2024 Queen Dynasty Studio. All rights reserved.</p>
+          <ul class="social-list">
+            <li><a href="#" class="social-link">
+                <ion-icon name="logo-twitter" style="color: rgb(242, 156, 190);"></ion-icon>
+              </a></li>
+            <li><a href="#" class="social-link">
+                <ion-icon name="logo-facebook" style="color: rgb(242, 156, 190);"></ion-icon>
+              </a></li>
+            <li><a href="#" class="social-link">
+                <ion-icon name="logo-instagram" style="color: rgb(242, 156, 190);"></ion-icon>
+              </a></li>
+            <li><a href="#" class="social-link">
+                <ion-icon name="logo-youtube" style="color: rgb(242, 156, 190);"></ion-icon>
+              </a></li>
+          </ul>
+        </div>
+        <a href="#" class="logo"><img src="./assets/images/logo.png" width="179" height="26" loading="lazy"
+            alt="Queen Dynasty Studio"></a>
+        <img src="./assets/images/pay.png" width="313" height="28" alt="available all payment method" class="w-100">
+      </div>
+    </div>
+  </footer>
+
+  <!-- custom js link -->
+  <script src="./assets/js/script.js" defer></script>
+  <!-- ionicon link -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("to52LqUt1QWtFj2cC"); // Replace with your EmailJS user ID
+    })();
+  </script>
+
+  <script>
+    function updateCartItemQuantity(productId, quantity) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart = cart.map(item => {
+        if (item.id === productId) {
+          item.quantity = quantity;
+        }
+        return item;
+      });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCartItems();
+    }
+
+    function calculateTotal() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      document.getElementById('cart-total').innerText = `${total.toFixed(2)}`;
+    }
+
+    function displayCartItems() {
+      const cartContainer = document.getElementById('cart-items');
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      cartContainer.innerHTML = ''; // Clear current cart items
+
+      cart.forEach(item => {
+        const itemElement = document.createElement('li');
+        itemElement.classList.add('scrollbar-item');
+        itemElement.innerHTML = `
+          <div class="shop-card">
+            <div class="card-banner img-holder" style="--width: 540; --height: 720;">
+              <img src="${item.image}" width="540" height="720" loading="lazy" alt="${item.name}" class="img-cover">
+              <div class="card-actions">
+                <button class="action-btn" aria-label="remove from cart" onclick="removeFromCart('${item.id}')">
+                  <ion-icon name="trash-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                </button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3><a href="#" class="card-title" style="color: rgb(255, 255, 255);">${item.name}</a></h3>
+              <div class="price"><span class="span" style="color: rgb(255, 255, 255);">${item.price}</span></div>
+              <div class="quantity">
+                <input style="background-color: white; color: black;" type="number" min="1" value="${item.quantity}" onchange="updateCartItemQuantity('${item.id}', this.value)">
+              </div>
+              <div class="total-price"><span class="span" style="color: rgb(0, 0, 0);"><i><b>${(item.price * item.quantity).toFixed(2)}</i></b></span></div>
+            </div>
+          </div>
+        `;
+        cartContainer.appendChild(itemElement);
+      });
+
+      calculateTotal();
+    }
+
+    function removeFromCart(productId) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart = cart.filter(item => item.id !== productId);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCartItems();
+    }
+
+    document.addEventListener('DOMContentLoaded', displayCartItems);
+
+    document.getElementById('checkout-btn').addEventListener('click', () => {
+      const checkoutForm = document.getElementById('checkout-form');
+      checkoutForm.style.display = checkoutForm.style.display === 'none' ? 'block' : 'none';
+    });
+
+    document.getElementById('checkout-details').addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent default form submission
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+      const city = document.getElementById('city').value;
+      const state = document.getElementById('state').value;
+      const zip = document.getElementById('zip').value;
+
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Prepare email content
+      let emailContent =
+        `Customer Information:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}, ${city}, ${state}, ${zip}\n\nProducts:\n`;
+
+      cart.forEach(item => {
+        emailContent +=
+          `Product ID: ${item.id}, Name: ${item.name}, Price: $${item.price}, Quantity: ${item.quantity}\n`;
+      });
+
+      // Send email using EmailJS
+      emailjs.send('service_q7pf937', 'template_1oqbjqe', {
+          to_email: 'guanman2020@gmail.com',
+          customer_name: name,
+          customer_email: email,
+          customer_phone: phone,
+          customer_address: `${address}, ${city}, ${state}, ${zip}`,
+          message: emailContent
+        })
+        .then((response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('Thank you for your order!');
+          // Clear the form after submission
+          document.getElementById('checkout-details').
+          reset();
+          document.getElementById('checkout-form').style.display = 'none';
+          localStorage.removeItem('cart');
+          displayCartItems();
+          window.location.href = "index.html"; // Redirect to home page
+        }, (error) => {
+          console.log('FAILED...', error);
+          alert('There was an error sending your order. Please try again.');
+        });
+    });
+  </script>
+
+</body>
+
+</html>
