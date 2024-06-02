@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Queen Dynasty Studio - Reveal The Beauty of your Hair</title>
+  <title>Queen Dynasty Studio - Cart</title>
 
   <!-- favicon -->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
@@ -20,61 +20,61 @@
 
   <!-- preload images -->
   <link rel="preload" as="image" href="./assets/images/logo.png">
-  <link rel="preload" as="image" href="./assets/images/hero-banner-1.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-banner-2.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-banner-3.jpg">
-
 </head>
 
+<body>
 
-  <body id="top">
-
-    <header class="header">
-      <div class="alert" style="color: rgb(0, 0, 0); background-color:  rgb(242, 156, 190);">
-        <p class="alert-text">Thank you for with us!!</p>
-      </div>
-      <div class="header-top" data-header>
-        <div class="container">
-          <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-            <span class="line line-1"></span>
-            <span class="line line-2"></span>
-            <span class="line line-3"></span>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="alert" style="color: rgb(0, 0, 0); background-color: rgb(242, 156, 190);">
+      <p class="alert-text">Thank you for being with us!!</p>
+    </div>
+    <div class="header-top" data-header>
+      <div class="container">
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+        <div class="input-wrapper">
+          <input type="search" name="search" class="search-field" style=" border-color: rgb(0, 0, 0); ">
+          <button class="search-submit" aria-label="search">
+            <ion-icon name="search-outline" aria-hidden="true"
+              style="background-color: rgb(0, 0, 0); color: rgb(0, 0, 0);"></ion-icon>
           </button>
-          <div class="input-wrapper">
-            <input type="search" name="search" placeholder="Search product" class="search-field"
-              style=" border-color:  rgb(242, 156, 190);">
-            <button class="search-submit" aria-label="search">
-              <ion-icon name="search-outline" aria-hidden="true"
-                style="background-color: rgb(0, 0, 0); color:  rgb(242, 156, 190); "></ion-icon>
-            </button>
-          </div>
-          <a href="../glowing-master/assets/images/logo.jpg" class="logo">
-            <img src="./assets/images/logo.jpg" width="179" height="26" alt="Glowing">
-          </a>
-          <div class="header-actions">
-          
-              <ion-icon name="Hair" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-          
-            <button class="header-action-btn" aria-label="favourite item">
-              <ion-icon name="star-outline" aria-hidden="true" style=" color: rgb(242, 156, 190);"></ion-icon>
-            </button>
-            <button id="theme-toggle" class="header-action-btn" aria-label="cart">
-              <a href="cart.html">
-                <ion-icon name="cart" aria-hidden="true"
-                  style=" color: rgb(242, 156, 190); border-radius: 16;"></ion-icon>
-              </a>
-            </button>
-          </div>
-          <nav class="navbar">
-            <ul class="navbar-list">
-              <li><a href="#home" class="navbar-link has-after" style=" color: rgb(242, 156, 190);">Home</a></li>
-              <li><a href="#shop" class="navbar-link has-after" style=" color: rgb(242, 156, 190);">Shop</a></li>
-              <li><a href="#offer" class="navbar-link has-after" style=" color: rgb(242, 156, 190);">Offer</a></li>
-            </ul>
-          </nav>
         </div>
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.jpg" width="179" height="26" alt="Glowing">
+        </a>
+        <div class="header-actions">
+          <button class="header-action-btn">
+            <ion-icon name="person-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+          </button>
+          <button class="header-action-btn" aria-label="favourite item">
+            <ion-icon name="star-outline" aria-hidden="true" style=" color: rgb(242, 156, 190);"></ion-icon>
+          </button>
+          <button id="theme-toggle" class="header-action-btn" aria-label="cart">
+            <a href="cart.html">
+              <button class="header-action-btn">
+                <ion-icon name="person-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+              </button>
+              <img src="assets/images/icons/pink-shopping-cart-10950.svg" aria-hidden="true"
+                            style="color: rgb(242, 156, 190); border-radius: 16;
+                              width: 24px; /* Adjust the width as needed */
+                              height: 24px; /* Adjust the height as needed */
+                          ">
+            </a>
+          </button>
+        </div>
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li><a href="index.html" class="navbar-link has-after" style=" color: rgb(242, 156, 190);">Home</a></li>
+          </ul>
+        </nav>
       </div>
-    </header>
+    </div>
+  </header>
+
   <main>
     <article>
         <section class="section hero" id="shop" aria-label="hero">
@@ -175,34 +175,48 @@
 
   <script>
     function addToCart(productName, selectedInch) {
-      const inchPrices = {
-        "14": 272.00,
-        "16": 288.00,
-        "18": 301.00,
-        "20": 353.00,
-        "22": 371.00,
-        "24": 383.00,
-        "26": 508.00,
-        "28": 470.00,
-        "30": 561.00,
-        "32": 605.00
-      };
-      const images = {
-      "Body Wave": "./assets/images/product-07.jpg",
-    };
-      const price = inchPrices[selectedInch];
-      const product = {
-        id: `${productName}-${selectedInch}`,
-        name: `${productName} - ${selectedInch}"`,
-        price: price,
-        quantity: 1,
-        image: images[productName]
-      };
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.push(product);
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert(`${productName} (${selectedInch}") added to cart.`);
-    }
+  const inchPrices = {
+    "14": 200.00,
+    "16": 220.00,
+    "18": 240.00,
+    "20": 260.00,
+    "22": 280.00,
+    "24": 300.00,
+    "26": 320.00,
+    "28": 340.00,
+    "30": 360.00,
+    "32": 380.00
+  };
+  const images = {
+    "Body Wave Glam Box": "assets/images/hero-banner-1.jpg",
+  };
+  const price = inchPrices[selectedInch];
+  const productId = `${productName}-${selectedInch}`;
+  const product = {
+    id: productId,
+    name: `${productName} - ${selectedInch}"`,
+    price: price,
+    quantity: 1,
+    image: images[productName]
+  };
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+  // Check if the product with the same inch already exists in the cart
+  const existingProductIndex = cart.findIndex(item => item.id === productId);
+
+  if (existingProductIndex > -1) {
+    // If the product exists, increase the quantity
+    cart[existingProductIndex].quantity += 1;
+  } else {
+    // If the product does not exist, add it to the cart
+    cart.push(product);
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(`${productName} (${selectedInch}") added to cart.`);
+  displayCartItems();  // Update the cart display
+}
   </script>
 </body>
 </html>
