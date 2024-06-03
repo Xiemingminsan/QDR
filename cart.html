@@ -20,10 +20,40 @@
 
   <!-- preload images -->
   <link rel="preload" as="image" href="./assets/images/logo.png">
+
+  <style>
+ 
+ #cart-items .scrollbar-item {
+        width: 200px;  /* Adjust the width as needed */
+        height: 400px; /* Adjust the height as needed */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid rgb(242, 156, 190);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Ensure images fit within the fixed size */
+    #cart-items .scrollbar-item img {
+        max-width: 100%;
+        max-height: 60%;
+        object-fit: contain;
+    }
+
+    /* Ensure other content fits within the fixed size */
+    #cart-items .scrollbar-item .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+    }
+  </style>
 </head>
 
 <body>
-
   <!-- HEADER -->
   <header class="header">
     <div class="alert" style="color: rgb(0, 0, 0); background-color: rgb(242, 156, 190);">
@@ -68,6 +98,7 @@
       </div>
     </div>
   </header>
+
   <!-- CART -->
   <main>
     <section class="section cart" id="cart">
@@ -85,130 +116,100 @@
               <div class="totals-value" id="cart-total"><i><b>0.00</b></i></div>
             </div>
             <br>
-            <button id="checkout-btn" class="btn btn-primary"
-              style="background-color: rgb(242, 156, 190);color: white;">Checkout</button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <div id="checkout-form" style="display: none;">
-    <h3 class="h3 section-title">Checkout Information</h3>
-    <form id="checkout-details">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required><br>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br>
-
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" required><br>
-
-      <label for="address">Address:</label>
-      <input type="text" id="address" name="address" required><br>
-
-      <label for="city">City:</label>
-      <input type="text" id="city" name="city" required><br>
-
-      <label for="state">State:</label>
-      <input type="text" id="state" name="state" required><br>
-
-      <label for="zip">Zip Code:</label>
-      <input type="text" id="zip" name="zip" required><br>
-
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+           <section>
+  <div id="checkout-btn-container" class="text-center" style="margin: 20px;">
+    <button id="checkout-btn" class="btn btn-primary" style="background-color: rgb(242, 156, 190); color: rgb(96, 76, 76); padding: 10px 20px; font-size: 16px; border-radius: 5px; ">Checkout</button>
   </div>
-  </main>
+</section>
+
+<div id="checkout-form" style="color: rgb(242, 156, 190); max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #000000;">
+  <h3 class="h3 section-title" style="color:rgb(242, 156, 190); text-align: center; margin-bottom: 20px;">Checkout Information</h3>
+  <form id="checkout-details">
+    <div style="margin-bottom: 15px;">
+      <label for="name" style="display: block; margin-bottom: 5px;">Name:</label>
+      <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="phone" style="display: block; margin-bottom: 5px;">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="address" style="display: block; margin-bottom: 5px;">Address:</label>
+      <input type="text" id="address" name="address" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="city" style="display: block; margin-bottom: 5px;">City:</label>
+      <input type="text" id="city" name="city" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="state" style="display: block; margin-bottom: 5px;">State:</label>
+      <input type="text" id="state" name="state" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="zip" style="display: block; margin-bottom: 5px;">Zip Code:</label>
+      <input type="text" id="zip" name="zip" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+    </div>
+
+    <div style="text-align: center; display: flex; justify-content: center; margin-top: 20px;">
+      <button type="submit" class="btn btn-primary" style="background-color: rgb(242, 156, 190); color: white; padding: 10px 20px; font-size: 16px; border-radius: 5px;">Submit</button>
+    </div>
+    
+  </form>
+</div>
+
+    </div>
+    </main>
 
   <!-- FOOTER -->
+  
   <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <ul class="footer-list">
-          <li>
-            <p class="footer-list-title" style="color: rgb(242, 156, 190);">Company</p>
-          </li>
-          <li>
-            <p class="footer-list-text">Find a location nearest you. <br> <a href="#" class="link"
-                style="color: rgb(242, 156, 190);">Our Stores</a></p>
-          </li>
-          <li>
-            <p class="footer-list-text bold" style="color: rgb(242, 156, 190);">+391 (0)35 2568 4593</p>
-          </li>
-          <li>
-            <p class="footer-list-text">hello@domain.com</p>
-          </li>
-        </ul>
-        <ul class="footer-list">
-          <li>
-            <p class="footer-list-title" style="color: rgb(242, 156, 190);">Useful links</p>
-          </li>
-          <li><a href="#" class="footer-link">New Products</a></li>
-          <li><a href="#" class="footer-link">Best Sellers</a></li>
-          <li><a href="#" class="footer-link">Bundle & Save</a></li>
-          <li><a href="#" class="footer-link">Online Gift Card</a></li>
-          <li><a href="sign-up-creator.html" class="footer-link">Become a Creator</a></li>
-        </ul>
-        <ul class="footer-list">
-          <li>
-            <p class="footer-list-title" style="color: rgb(242, 156, 190);">Information</p>
-          </li>
-          <li><a href="#" class="footer-link">Start a Return</a></li>
-          <li><a href="#" class="footer-link">Contact Us</a></li>
-          <li><a href="#" class="footer-link">Shipping FAQ</a></li>
-          <li><a href="#" class="footer-link">Terms & Conditions</a></li>
-          <li><a href="#" class="footer-link">Privacy Policy</a></li>
-        </ul>
-        <div class="footer-list">
-          <p class="newsletter-title" style="color: rgb(242, 156, 190);">Good emails.</p>
-          <p class="newsletter-text">Enter your email below to be the first to know about new collections and product
-            launches.</p>
-          <form action="" class="newsletter-form">
-            <input type="email" name="email_address" placeholder="Enter your email address" required
-              class="email-field">
-            <button type="submit" class="btn btn-primary"
-              style="color: rgb(255, 255, 255); background-color: rgb(242, 156, 190);">Subscribe</button>
-          </form>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="wrapper">
-          <p class="copyright">&copy; 2024 Queen Dynasty Studio. All rights reserved.</p>
-          <ul class="social-list">
-            <li><a href="#" class="social-link">
-                <ion-icon name="logo-twitter" style="color: rgb(242, 156, 190);"></ion-icon>
-              </a></li>
-            <li><a href="#" class="social-link">
-                <ion-icon name="logo-facebook" style="color: rgb(242, 156, 190);"></ion-icon>
-              </a></li>
-            <li><a href="#" class="social-link">
-                <ion-icon name="logo-instagram" style="color: rgb(242, 156, 190);"></ion-icon>
-              </a></li>
-            <li><a href="#" class="social-link">
-                <ion-icon name="logo-youtube" style="color: rgb(242, 156, 190);"></ion-icon>
-              </a></li>
-          </ul>
-        </div>
-        <a href="#" class="logo"><img src="./assets/images/logo.png" width="179" height="26" loading="lazy"
-            alt="Queen Dynasty Studio"></a>
-        <img src="./assets/images/pay.png" width="313" height="28" alt="available all payment method" class="w-100">
-      </div>
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
     </div>
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Signup to be a creator </a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Shop</a></li>
+    </ul>
+    <p style="text-align: center; display: flex; justify-content: center; margin-top: 20px;"  >&copy;2024 QDR | All Rights Reserved</p>
   </footer>
-
-  <!-- custom js link -->
-  <script src="./assets/js/script.js" defer></script>
-  <!-- ionicon link -->
+  
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("to52LqUt1QWtFj2cC"); // Replace with your EmailJS user ID
-    })();
-  </script>
 
+ 
+
+  <!-- Custom JS and ionicon links -->
+  <script src="./assets/js/script.js" defer></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script>
     function updateCartItemQuantity(productId, quantity) {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -239,8 +240,8 @@
         itemElement.classList.add('scrollbar-item');
         itemElement.innerHTML = `
           <div class="shop-card">
-            <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-              <img src="${item.image}" width="540" height="720" loading="lazy" alt="${item.name}" class="img-cover">
+            <div class="card-banner img-holder">
+              <img src="${item.image}" loading="lazy" alt="${item.name}" class="img-cover">
               <div class="card-actions">
                 <button class="action-btn" aria-label="remove from cart" onclick="removeFromCart('${item.id}')">
                   <ion-icon name="trash-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
@@ -312,8 +313,7 @@
           console.log('SUCCESS!', response.status, response.text);
           alert('Thank you for your order!');
           // Clear the form after submission
-          document.getElementById('checkout-details').
-          reset();
+          document.getElementById('checkout-details').reset();
           document.getElementById('checkout-form').style.display = 'none';
           localStorage.removeItem('cart');
           displayCartItems();
@@ -324,7 +324,6 @@
         });
     });
   </script>
-
 </body>
 
 </html>
