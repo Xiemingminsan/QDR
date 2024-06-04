@@ -118,13 +118,13 @@
             <br>
            <section>
   <div id="checkout-btn-container" class="text-center" style="margin: 20px;">
-    <button id="checkout-btn" class="btn btn-primary" style="background-color: rgb(242, 156, 190); color: rgb(96, 76, 76); padding: 10px 20px; font-size: 16px; border-radius: 5px; ">Checkout</button>
+    <button id="checkout-btn" class="btn btn-primary" style="background-color: rgb(242, 156, 190); color: rgb(0, 0, 0); padding: 10px 20px; font-size: 16px; border-radius: 5px; ">Checkout</button>
   </div>
 </section>
 
-<div id="checkout-form" style="color: rgb(242, 156, 190); max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #000000;">
+<div id="checkout-form" style="display: none; color: rgb(242, 156, 190); max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #000000;">
   <h3 class="h3 section-title" style="color:rgb(242, 156, 190); text-align: center; margin-bottom: 20px;">Checkout Information</h3>
-  <form id="checkout-details">
+  <form id="checkout-details" style="border-radius: 16px;">
     <div style="margin-bottom: 15px;">
       <label for="name" style="display: block; margin-bottom: 5px;">Name:</label>
       <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
@@ -170,6 +170,19 @@
     </div>
     </main>
 
+    <div id="alert-modal" class="modal">
+      <div class="modal-content" style="background-color: #000000; border-color: rgb(242, 156, 190);">
+        <p style="color: rgb(255, 255, 255);">Your order has been placed. You will be contacted shortly.</p>
+        <button id="modal-ok-btn" style="background-color: rgb(242, 156, 190); color: rgb(0, 0, 0);">OK</button>
+      </div>
+    </div>
+
+    <div id="cart-empty-modal" class="modal">
+      <div class="modal-content" style="background-color: #000000; border-color: rgb(242, 156, 190);">
+        <p style="color: rgb(255, 255, 255);">Your cart is empty. Please add items to your cart before checking out.</p>
+        <button id="cart-empty-ok-btn" style="background-color: rgb(242, 156, 190); color: rgb(0, 0, 0); ">OK</button>
+      </div>
+    </div>
   <!-- FOOTER -->
   
   <footer class="footer">
@@ -203,13 +216,13 @@
   
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
- 
-
-  <!-- Custom JS and ionicon links -->
-  <script src="./assets/js/script.js" defer></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("to52LqUt1QWtFj2cC"); // Replace with your EmailJS user ID
+    })();
+  </script>
+  
   <script>
     function updateCartItemQuantity(productId, quantity) {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -222,19 +235,19 @@
       localStorage.setItem('cart', JSON.stringify(cart));
       displayCartItems();
     }
-
+  
     function calculateTotal() {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
       let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
       document.getElementById('cart-total').innerText = `${total.toFixed(2)}`;
     }
-
+  
     function displayCartItems() {
       const cartContainer = document.getElementById('cart-items');
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
+  
       cartContainer.innerHTML = ''; // Clear current cart items
-
+  
       cart.forEach(item => {
         const itemElement = document.createElement('li');
         itemElement.classList.add('scrollbar-item');
@@ -260,70 +273,98 @@
         `;
         cartContainer.appendChild(itemElement);
       });
-
+  
       calculateTotal();
     }
-
+  
     function removeFromCart(productId) {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
       cart = cart.filter(item => item.id !== productId);
       localStorage.setItem('cart', JSON.stringify(cart));
       displayCartItems();
     }
-
-    document.addEventListener('DOMContentLoaded', displayCartItems);
-
-    document.getElementById('checkout-btn').addEventListener('click', () => {
-      const checkoutForm = document.getElementById('checkout-form');
-      checkoutForm.style.display = checkoutForm.style.display === 'none' ? 'block' : 'none';
-    });
-
-    document.getElementById('checkout-details').addEventListener('submit', (event) => {
-      event.preventDefault(); // Prevent default form submission
-
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const address = document.getElementById('address').value;
-      const city = document.getElementById('city').value;
-      const state = document.getElementById('state').value;
-      const zip = document.getElementById('zip').value;
-
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-      // Prepare email content
-      let emailContent =
-        `Customer Information:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}, ${city}, ${state}, ${zip}\n\nProducts:\n`;
-
-      cart.forEach(item => {
-        emailContent +=
-          `Product ID: ${item.id}, Name: ${item.name}, Price: $${item.price}, Quantity: ${item.quantity}\n`;
+  
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('checkout-btn').addEventListener('click', () => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (cart.length === 0) {
+          showModal('cart-empty-modal');
+          return;
+        }
+  
+        const checkoutForm = document.getElementById('checkout-form');
+        checkoutForm.style.display = checkoutForm.style.display === 'none' ? 'block' : 'none';
       });
-
-      // Send email using EmailJS
-      emailjs.send('service_q7pf937', 'template_1oqbjqe', {
-          to_email: 'guanman2020@gmail.com',
-          customer_name: name,
-          customer_email: email,
-          customer_phone: phone,
-          customer_address: `${address}, ${city}, ${state}, ${zip}`,
-          message: emailContent
-        })
-        .then((response) => {
-          console.log('SUCCESS!', response.status, response.text);
-          alert('Thank you for your order!');
-          // Clear the form after submission
-          document.getElementById('checkout-details').reset();
-          document.getElementById('checkout-form').style.display = 'none';
-          localStorage.removeItem('cart');
-          displayCartItems();
-          window.location.href = "index.html"; // Redirect to home page
-        }, (error) => {
-          console.log('FAILED...', error);
-          alert('There was an error sending your order. Please try again.');
+  
+      document.getElementById('checkout-details').addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent default form submission
+  
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const address = document.getElementById('address').value;
+        const city = document.getElementById('city').value;
+        const state = document.getElementById('state').value;
+        const zip = document.getElementById('zip').value;
+  
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+        // Prepare email content
+        let emailContent =
+          `Customer Information:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}, ${city}, ${state}, ${zip}\n\nProducts:\n`;
+  
+        cart.forEach(item => {
+          emailContent +=
+            `Product ID: ${item.id}, Name: ${item.name}, Price: $${item.price}, Quantity: ${item.quantity}\n`;
         });
+  
+        // Send email using EmailJS
+        emailjs.send('service_q7pf937', 'template_1oqbjqe', {
+            to_email: 'guanman2020@gmail.com',
+            customer_name: name,
+            customer_email: email,
+            customer_phone: phone,
+            customer_address: `${address}, ${city}, ${state}, ${zip}`,
+            message: emailContent
+          })
+          .then((response) => {
+            console.log('SUCCESS!', response.status, response.text);
+            showModal('alert-modal'); // Show order placed modal
+            // Clear the form after submission
+            document.getElementById('checkout-details').reset();
+            document.getElementById('checkout-form').style.display = 'none';
+            localStorage.removeItem('cart');
+            displayCartItems();
+          }, (error) => {
+            console.error('FAILED...', error);
+            alert('There was an error sending your order. Please try again.');
+          });
+      });
+  
+      document.getElementById('modal-ok-btn').addEventListener('click', () => {
+        closeModal('alert-modal');
+        window.location.href = "index.html"; // Redirect to home page
+      });
+  
+      document.getElementById('cart-empty-ok-btn').addEventListener('click', () => {
+        closeModal('cart-empty-modal');
+      });
+  
+      function showModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'flex';
+      }
+  
+      function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'none';
+      }
+  
+      displayCartItems();
     });
   </script>
+  
+
 </body>
 
 </html>

@@ -2,31 +2,31 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Queen Dynasty Studio - Cart</title>
 
   <!-- favicon -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
 
   <!-- custom css link -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
   <!-- google font link -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
   <!-- preload images -->
-  <link rel="preload" as="image" href="./assets/images/logo.png">
+  <link rel="preload" as="image" href="./assets/images/logo.png" />
 </head>
 
 <body>
-
   <!-- HEADER -->
   <header class="header">
-    <div class="alert" style="color: rgb(0, 0, 0); background-color: rgb(242, 156, 190);">
+    <div class="alert" style="color: rgb(0, 0, 0); background-color: rgb(242, 156, 190)">
       <p class="alert-text">Thank you for being with us!!</p>
     </div>
     <div class="header-top" data-header>
@@ -37,38 +37,45 @@
           <span class="line line-3"></span>
         </button>
         <div class="input-wrapper">
-          <input type="search" name="search" class="search-field" style=" border-color: rgb(0, 0, 0); ">
+          <input type="search" name="search" class="search-field"
+            style="pointer-events: none; border-color: rgb(0, 0, 0)" />
           <button class="search-submit" aria-label="search">
             <ion-icon name="search-outline" aria-hidden="true"
-              style="background-color: rgb(0, 0, 0); color: rgb(0, 0, 0);"></ion-icon>
+              style="background-color: rgb(0, 0, 0); color: rgb(0, 0, 0)"></ion-icon>
           </button>
         </div>
         <a href="index.html" class="logo">
-          <img src="./assets/images/logo.jpg" width="179" height="26" alt="Glowing">
+          <img src="./assets/images/logo.jpg" width="179" height="26" alt="Glowing" />
         </a>
         <div class="header-actions">
           <button class="header-action-btn">
             <a href="#glambox">
-            <ion-icon name="person-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+              <ion-icon name="person-outline" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
             </a>
           </button>
           <button class="header-action-btn" aria-label="favourite item">
             <a href="#shop">
-            <ion-icon name="star-outline" aria-hidden="true" style=" color: rgb(242, 156, 190);"></ion-icon>
-          </a>
+              <ion-icon name="star-outline" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+            </a>
           </button>
           <button id="theme-toggle" class="header-action-btn" aria-label="cart">
             <a href="cart.html">
-              <ion-icon name="cart" aria-hidden="true" style=" color: rgb(242, 156, 190); border-radius: 16;">
+              <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190); border-radius: 16">
               </ion-icon>
             </a>
           </button>
         </div>
         <nav class="navbar">
           <ul class="navbar-list">
-            <li><a href="index.html" class="navbar-link has-after" style=" color: rgb(242, 156, 190);">Home</a></li>
-            <li><a href="#shop" class="navbar-link has-after" style=" color: rgb(242, 156, 190);">Shop</a></li>
-            <li><a href="#offer" class="navbar-link has-after" style=" color: rgb(242, 156, 190);">Offer</a></li>
+            <li>
+              <a href="index.html" class="navbar-link has-after" style="color: rgb(242, 156, 190)">Home</a>
+            </li>
+            <li>
+              <a href="#shop" class="navbar-link has-after" style="color: rgb(242, 156, 190)">Shop</a>
+            </li>
+            <li>
+              <a href="#offer" class="navbar-link has-after" style="color: rgb(242, 156, 190)">Offer</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -80,7 +87,7 @@
     <div class="mobile-navbar" data-navbar>
       <div class="wrapper">
         <a href="index.html" class="logo">
-          <img src="./assets/images/logo.jpg" width="179" height="26" alt="Queen Dynasty Studio">
+          <img src="./assets/images/logo.jpg" width="179" height="26" alt="Queen Dynasty Studio" />
         </a>
         <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
           <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
@@ -103,32 +110,77 @@
         <div class="container">
           <ul class="has-scrollbar">
             <li class="scrollbar-item">
-              <div class="hero-card has-bg-image" style="background-image: url('./assets/images/hero-banner-1.jpg')">
+              <div class="hero-card has-bg-image" style="
+                    background-image: url('./assets/images/hero-banner-1.jpg');
+                  ">
                 <div class="card-content">
-                  <h1 class="h1 hero-title" style=" color: white;">Embrace Your Beauty</h1>
-                  <p class="hero-text" style=" color: white">Providing exceptional service to black girls who love expressing themselves through their hair.</p>
-                  <p class="price" style=" color: white">Starting at $269.99</p>
-                  <a href="#glambox" class="btn btn-primary" style=" color: rgb(255, 255, 255); background-color: rgb(242, 156, 190);">Shop Now</a>
+                  <h1 class="h1 hero-title" style="color: white">
+                    Embrace Your Beauty
+                  </h1>
+                  <p class="hero-text" style="color: white">
+                    Providing exceptional service to black girls who love
+                    expressing themselves through their hair.
+                  </p>
+                  <p class="price" style="color: white">
+                    Starting at $269.99
+                  </p>
+                  <p href="#glambox" class style="
+                        color: rgb(242, 156, 190);
+                        background-color: transparent;
+                        pointer-events: none;
+                        text-align: left;
+                      ">
+                    Shop Now
+                  </p>
                 </div>
               </div>
             </li>
             <li class="scrollbar-item">
-              <div class="hero-card has-bg-image" style="background-image: url('./assets/images/hero-banner-2.jpg')">
+              <div class="hero-card has-bg-image" style="
+                    background-image: url('./assets/images/hero-banner-2.jpg');
+                  ">
                 <div class="card-content">
-                  <h1 class="h1 hero-title" style=" color: white;">Style with Confidence</h1>
-                  <p class="hero-text" style=" color: white">Express your unique style with our top-quality hair products.</p>
-                  <p class="price" style=" color: white">Starting at $15.90</p>
-                  <a href="#shop" class="btn btn-primary" style=" color: rgb(255, 255, 255); background-color: rgb(242, 156, 190);">Shop Now</a>
+                  <h1 class="h1 hero-title" style="color: white">
+                    Style with Confidence
+                  </h1>
+                  <p class="hero-text" style="color: white">
+                    Express your unique style with our top-quality hair
+                    products.
+                  </p>
+                  <p class="price" style="color: white">Starting at $15.90</p>
+                  <p href="#glambox" class style="
+                        color: rgb(242, 156, 190);
+                        background-color: transparent;
+                        pointer-events: none;
+                        text-align: left;
+                      ">
+                    Shop Now
+                  </p>
                 </div>
               </div>
             </li>
             <li class="scrollbar-item">
-              <div class="hero-card has-bg-image" style="background-image: url('./assets/images/hero-banner-3.jpg')">
+              <div class="hero-card has-bg-image" style="
+                    background-image: url('./assets/images/hero-banner-3.jpg');
+                  ">
                 <div class="card-content">
-                  <h1 class="h1 hero-title" style=" color: white;">Your Hair, Your Way</h1>
-                  <p class="hero-text" style=" color: white">Find the perfect products to enhance your natural beauty.</p>
-                  <p class="price" style=" color: white">Starting at $272.00</p>
-                  <a href="#glambox" class="btn btn-primary" style=" color: rgb(255, 255, 255); background-color: rgb(242, 156, 190);">Shop Now</a>
+                  <h1 class="h1 hero-title" style="color: white">
+                    Your Hair, Your Way
+                  </h1>
+                  <p class="hero-text" style="color: white">
+                    Find the perfect products to enhance your natural beauty.
+                  </p>
+                  <p class="price" style="color: white">
+                    Starting at $272.00
+                  </p>
+                  <p href="#glambox" class style="
+                        color: rgb(242, 156, 190);
+                        background-color: transparent;
+                        pointer-events: none;
+                        text-align: left;
+                      ">
+                    Shop Now
+                  </p>
                 </div>
               </div>
             </li>
@@ -136,373 +188,365 @@
         </div>
       </section>
 
-      <!-- COLLECTION SECTION -->
-      <section class="section collection" id="collection" aria-label="collection" data-section>
-        <div class="container">
-          <ul class="collection-list">
-            <li>
-              <div class="collection-card has-before hover:shine">
-                <h2 class="h2 card-title">Summer Collection</h2>
-                <p class="card-text">Starting at $20.00</p>
-                <div class="has-bg-image" style="background-image: url('./assets/images/glue.png')"></div>
-              </div>
-            </li>
-            <li>
-              <div class="collection-card has-before hover:shine">
-                <h2 class="h2 card-title">What’s New?</h2>
-                <p class="card-text">Get the Products</p>
-                <div class="has-bg-image" style="background-image: url('./assets/images/elastic.png')"></div>
-              </div>
-            </li>
-            <li>
-              <div class="collection-card has-before hover:shine">
-                <h2 class="h2 card-title">Exclusive Products</h2>
-                <p class="card-text">Starting at $7.99</p>
-                <div class="has-bg-image" style="background-image: url('./assets/images/a4.jpg')"></div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-
+      <!-- GLAMBOX SECTION -->
       <section class="section glam-box" id="glambox" aria-label="glam box" data-section>
         <div class="container">
-          <h2 class="h2 section-title" style="color: rgb(255, 255, 255);">Our Special Glam Boxes </h2><br>
+          <h2 class="h2 section-title" style="color: rgb(255, 255, 255)">
+            Our Special Glam Boxes
+          </h2>
+          <br />
           <ul class="has-scrollbar">
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                <img src="./assets/images/b3.png" alt="Straight Glam Box" width="540" height="720" loading="lazy"
-                class="img-cover">
-           
-                <div class="card-actions">
-                <a href="straight-glam-box.html" class="btn btn-primary" style="background-color:transparent; color: rgb(242, 156, 190);">     More</a>
+                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                  <img src="./assets/images/b3.png" alt="Straight Glam Box" width="540" height="720" loading="lazy"
+                    class="img-cover" />
+                  <div class="card-actions">
+                    <a href="straight-glam-box.html" class="btn btn-primary" style="
+                          background-color: transparent;
+                          color: rgb(242, 156, 190);
+                        ">More</a>
+                  </div>
+                </div>
+                <h3 style="text-align: center; color: rgb(222, 217, 219)">
+                  Straight Glam Box
+                </h3>
               </div>
-              </div>
-              <h3 style="text-align: center;  color: rgb(222, 217, 219);">
-                Straight Glam Box
-              </h3>
-            </div>
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                <img src="./assets/images/glambox2.png" alt="Body Wave Glam Box" width="540" height="720" loading="lazy"
-                class="img-cover">
-          
-                <div class="card-actions">
-                  <a href="body-wave-glam-box.html" class="btn btn-primary" style="background-color:transparent; color: rgb(242, 156, 190);">     More</a>
+                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                  <img src="./assets/images/glambox2.png" alt="Body Wave Glam Box" width="540" height="720"
+                    loading="lazy" class="img-cover" />
+                  <div class="card-actions">
+                    <a href="body-wave-glam-box.html" class="btn btn-primary" style="
+                          background-color: transparent;
+                          color: rgb(242, 156, 190);
+                        ">More</a>
+                  </div>
                 </div>
+                <h3 style="text-align: center; color: rgb(255, 255, 255)">
+                  Body Wave Glam Box
+                </h3>
               </div>
-              <h3  style="text-align: center;  color: rgb(255, 255, 255);">
-                Body Wave Glam Box
-              </h3>
-            </div>
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                <img src="./assets/images/g4.jpg" alt="Wet Curly Glam Box"  width="540" height="720" loading="lazy"
-                class="img-cover">
-                <h3>Wet Curly Glam Box</h3>
-                <div class="card-actions">
-                  <a href="wet-curly-glam-box.html" class="btn btn-primary" style="background-color:transparent; color: rgb(242, 156, 190);">     More</a>
+                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                  <img src="./assets/images/g4.jpg" alt="Wet Curly Glam Box" width="540" height="720" loading="lazy"
+                    class="img-cover" />
+                  <h3>Wet Curly Glam Box</h3>
+                  <div class="card-actions">
+                    <a href="wet-curly-glam-box.html" class="btn btn-primary" style="
+                          background-color: transparent;
+                          color: rgb(242, 156, 190);
+                        ">More</a>
+                  </div>
                 </div>
-             
-                
+                <h3 style="text-align: center; color: rgb(255, 255, 255)">
+                  Wet Curly Glam Box
+                </h3>
               </div>
-              <h3  style="text-align: center; color: rgb(255, 255, 255);" >
-                Wet Curly Glam Box
-              </h3>
-            </div>
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                <img src="./assets/images/g5.jpg" alt="Curly Glam Box" width="540" height="720" loading="lazy"
-                class="img-cover">
-             
-                <div class="card-actions">
-                  <a href="curly-glam-box.html" class="btn btn-primary" style="background-color:transparent; color: rgb(242, 156, 190);">     More</a>
+                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                  <img src="./assets/images/g5.jpg" alt="Curly Glam Box" width="540" height="720" loading="lazy"
+                    class="img-cover" />
+                  <div class="card-actions">
+                    <a href="curly-glam-box.html" class="btn btn-primary" style="
+                          background-color: transparent;
+                          color: rgb(242, 156, 190);
+                        ">More</a>
+                  </div>
                 </div>
-                
+                <h3 style="text-align: center; color: rgb(255, 255, 255)">
+                  Curly Glam Box
+                </h3>
               </div>
-              <h3  style="text-align: center; color: rgb(255, 255, 255);">
-                Curly Glam Box
-              </h3>
-            </div>
             </li>
           </ul>
         </div>
       </section>
 
-       <!-- SHOP SECTION -->
-       <section class="section shop" id="shop" aria-label="shop" data-section>
+      <!-- SHOP SECTION -->
+      <section class="section shop" id="shop" aria-label="shop" data-section>
         <div class="container">
           <div class="title-wrapper">
-            <h2 class="h2 section-title" style=" color: rgb(242, 156, 190);">Premium Products</h2>
+            <h2 class="h2 section-title" style="color: rgb(242, 156, 190)">
+              Premium Products
+            </h2>
             <a href="#" class="btn-link">
-              <span class="span" style=" color: rgb(242, 156, 190);">Queen Wear Crowns</span>
+              <span class="span" style="color: rgb(242, 156, 190)">Queen Wear Crowns</span>
             </a>
           </div>
           <ul class="has-scrollbar">
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                  <img src="assets/images/glue.png" width="540" height="720" loading="lazy" alt="Wig glue" class="img-cover">
+                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                  <img src="assets/images/glue.png" width="540" height="720" loading="lazy" alt="Wig glue"
+                    class="img-cover" />
                   <div class="card-actions">
-                    <button class="action-btn" aria-label="add to cart" data-id="1" data-name="Wig glue" data-price="20.63">
-                      <ion-icon name="bag-handle-outline" style="color: rgb(242, 156, 190);"></ion-icon>
+                    <button class="action-btn" aria-label="add to cart" data-id="1" data-name="Wig glue"
+                      data-price="20.63">
+                      <ion-icon name="bag-handle-outline" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
-                    <button class="action-btn" aria-label="add to wishlist">
-                      <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                    <button class="action-btn wishlist-btn" aria-label="add to wishlist" data-id="1" data-name="Wig glue"
+                      data-price="20.63">
+                      <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
                     <button class="action-btn" aria-label="compare">
-                      <ion-icon name="repeat-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
                   </div>
                 </div>
                 <div class="card-content">
                   <div class="price">
-                    <span class="span" style="color: rgb(255, 255, 255);">$20.63</span>
+                    <span class="span" style="color: rgb(255, 255, 255)">$20.63</span>
                   </div>
                   <h3>
-                    <a href="#" class="card-title" style="color: rgb(255, 255, 255);">Wig glue</a>
+                    <a href="#" class="card-title" style="color: rgb(255, 255, 255)">Wig glue</a>
                   </h3>
                   <div class="card-rating">
                     <div class="rating-wrapper" aria-label="5 star rating">
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190); "></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </div>
                   </div>
                 </div>
               </div>
             </li>
-            
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                  <img src="assets/images/waxstick.png" width="540" height="720" loading="lazy" alt="Wax Sticks" class="img-cover">
+                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                  <img src="assets/images/waxstick.png" width="540" height="720" loading="lazy" alt="Wax Sticks"
+                    class="img-cover" />
                   <div class="card-actions">
-                    <button class="action-btn" aria-label="add to cart" data-id="2" data-name="Wax Sticks" data-price="15.00">
-                      <ion-icon name="bag-handle-outline" style="color: rgb(242, 156, 190);"></ion-icon>
+                    <button class="action-btn" aria-label="add to cart" data-id="2" data-name="Wax Sticks"
+                      data-price="15.00">
+                      <ion-icon name="bag-handle-outline" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
-                    <button class="action-btn" aria-label="add to wishlist">
-                      <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                    <button class="action-btn wishlist-btn" aria-label="add to wishlist" data-id="2"
+                      data-name="Wax Sticks" data-price="15.00">
+                      <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
                     <button class="action-btn" aria-label="compare">
-                      <ion-icon name="repeat-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
                   </div>
                 </div>
                 <div class="card-content">
                   <div class="price">
-                    <span class="span" style="color: rgb(255, 255, 255);">$15.00</span>
+                    <span class="span" style="color: rgb(255, 255, 255)">$15.00</span>
                   </div>
                   <h3>
-                    <a href="#" class="card-title" style="color: rgb(255, 255, 255);">Wax Sticks</a>
+                    <a href="#" class="card-title" style="color: rgb(255, 255, 255)">Wax Sticks</a>
                   </h3>
                   <div class="card-rating">
                     <div class="rating-wrapper" aria-label="5 star rating">
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </div>
                   </div>
                 </div>
               </div>
             </li>
-            
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                  <img src="assets/images/tintspray.png" width="540" height="720" loading="lazy" alt="Lace tint" class="img-cover">
+                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                  <img src="assets/images/tintspray.png" width="540" height="720" loading="lazy" alt="Lace tint"
+                    class="img-cover" />
                   <div class="card-actions">
-                    <button class="action-btn" aria-label="add to cart" data-id="3" data-name="Lace tint" data-price="25.00">
-                      <ion-icon name="bag-handle-outline" style="color: rgb(242, 156, 190);"></ion-icon>
+                    <button class="action-btn" aria-label="add to cart" data-id="3" data-name="Lace tint"
+                      data-price="25.00">
+                      <ion-icon name="bag-handle-outline" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
-                    <button class="action-btn" aria-label="add to wishlist">
-                      <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                    <button class="action-btn wishlist-btn" aria-label="add to wishlist" data-id="3"
+                      data-name="Lace tint" data-price="25.00 ">
+                      <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
                     <button class="action-btn" aria-label="compare">
-                      <ion-icon name="repeat-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
                   </div>
                 </div>
                 <div class="card-content">
                   <div class="price">
-                    <span class="span" style="color: rgb(255, 255, 255);">$25.00</span>
+                    <span class="span" style="color: rgb(255, 255, 255)">$25.00</span>
                   </div>
                   <h3>
-                    <a href="#" class="card-title" style="color: rgb(255, 255, 255);">Lace tint</a>
+                    <a href="#" class="card-title" style="color: rgb(255, 255, 255)">Lace tint</a>
                   </h3>
                   <div class="card-rating">
                     <div class="rating-wrapper" aria-label="5 star rating">
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </div>
                   </div>
                 </div>
               </div>
             </li>
-            
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                  <img src="assets/images/edgecontrol.jpg" width="540" height="720" loading="lazy" alt="Edge Control" class="img-cover">
+                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                  <img src="assets/images/edgecontrol.jpg" width="540" height="720" loading="lazy" alt="Edge Control"
+                    class="img-cover" />
                   <div class="card-actions">
-                    <button class="action-btn" aria-label="add to cart" data-id="4" data-name="Edge Control" data-price="15.90">
-                      <ion-icon name="bag-handle-outline" style="color: rgb(242, 156, 190);"></ion-icon>
+                    <button class="action-btn" aria-label="add to cart" data-id="4" data-name="Edge Control"
+                      data-price="15.90">
+                      <ion-icon name="bag-handle-outline" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
-                    <button class="action-btn" aria-label="add to wishlist">
-                      <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                    <button class="action-btn wishlist-btn" aria-label="add to wishlist" data-id="4"
+                      data-name="Edge Control" data-price="15.90 ">
+                      <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
                     <button class="action-btn" aria-label="compare">
-                      <ion-icon name="repeat-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
                   </div>
                 </div>
                 <div class="card-content">
                   <div class="price">
-                    <span class="span" style="color: rgb(255, 255, 255);">$15.90</span>
+                    <span class="span" style="color: rgb(255, 255, 255)">$15.90</span>
                   </div>
                   <h3>
-                    <a href="#" class="card-title" style="color: rgb(255, 255, 255);">Edge Control</a>
+                    <a href="#" class="card-title" style="color: rgb(255, 255, 255)">Edge Control</a>
                   </h3>
                   <div class="card-rating">
                     <div class="rating-wrapper" aria-label="5 star rating">
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </div>
                   </div>
                 </div>
               </div>
             </li>
-            
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                  <img src="/assets/images/lace.jpg" width="540" height="720" loading="lazy" alt="Lace Adhesive" class="img-cover">
+                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                  <img src="/assets/images/lace.jpg" width="540" height="720" loading="lazy" alt="Lace Adhesive"
+                    class="img-cover" />
                   <div class="card-actions">
-                    <button class="action-btn" aria-label="add to cart" data-id="5" data-name="Lace Adhesive" data-price="10.00">
-                      <ion-icon name="bag-handle-outline" style="color: rgb(242, 156, 190);"></ion-icon>
+                    <button class="action-btn" aria-label="add to cart" data-id="5" data-name="Lace Adhesive"
+                      data-price="10.00">
+                      <ion-icon name="bag-handle-outline" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
-                    <button class="action-btn" aria-label="add to wishlist">
-                      <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                    <button class="action-btn wishlist-btn" aria-label="add to wishlist" data-id="5"
+                      data-name="Lace Adhesive" data-price="10.00">
+                      <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
                     <button class="action-btn" aria-label="compare">
-                      <ion-icon name="repeat-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
                   </div>
                 </div>
                 <div class="card-content">
                   <div class="price">
-                    <span class="span" style="color: rgb(255, 255, 255);">$10.00</span>
+                    <span class="span" style="color: rgb(255, 255, 255)">$10.00</span>
                   </div>
                   <h3>
-                    <a href="#" class="card-title" style="color: rgb(255, 255, 255);">Lace Adhesive</a>
+                    <a href="#" class="card-title" style="color: rgb(255, 255, 255)">Lace Adhesive</a>
                   </h3>
                   <div class="card-rating">
                     <div class="rating-wrapper" aria-label="5 star rating">
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </div>
-                 
                   </div>
                 </div>
               </div>
             </li>
-            
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                  <img src="assets/images/bonnet.jpg" width="540" height="720" loading="lazy" alt="Bonnet" class="img-cover">
+                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                  <img src="assets/images/bonnet.jpg" width="540" height="720" loading="lazy" alt="Bonnet"
+                    class="img-cover" />
                   <div class="card-actions">
-                    <button class="action-btn" aria-label="add to cart" data-id="6" data-name="Bonnet" data-price="20.00">
-                      <ion-icon name="bag-handle-outline" style="color: rgb(242, 156, 190);"></ion-icon>
+                    <button class="action-btn" aria-label="add to cart" data-id="6" data-name="Bonnet"
+                      data-price="20.00">
+                      <ion-icon name="bag-handle-outline" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
-                    <button class="action-btn" aria-label="add to wishlist">
-                      <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                    <button class="action-btn wishlist-btn" aria-label="add to wishlist" data-id="6" data-name="Bonnet"
+                      data-price="20.00">
+                      <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
                     <button class="action-btn" aria-label="compare">
-                      <ion-icon name="repeat-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
                   </div>
                 </div>
                 <div class="card-content">
                   <div class="price">
-                    <span class="span" style="color: rgb(255, 255, 255);">$20.00</span>
+                    <span class="span" style="color: rgb(255, 255, 255)">$20.00</span>
                   </div>
                   <h3>
-                    <a href="#" class="card-title" style="color: rgb(255, 255, 255);">Bonnet</a>
+                    <a href="#" class="card-title" style="color: rgb(255, 255, 255)">Bonnet</a>
                   </h3>
                   <div class="card-rating">
                     <div class="rating-wrapper" aria-label="5 star rating">
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </div>
-               
                   </div>
                 </div>
               </div>
             </li>
-            
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                  <img src="assets/images/elastic.png" width="540" height="720" loading="lazy" alt="Elastic band" class="img-cover">
+                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                  <img src="assets/images/elastic.png" width="540" height="720" loading="lazy" alt="Elastic band"
+                    class="img-cover" />
                   <div class="card-actions">
-                    <button class="action-btn" aria-label="add to cart" data-id="7" data-name="Elastic band" data-price="8.00">
-                      <ion-icon name="bag-handle-outline" style="color: rgb(242, 156, 190);"></ion-icon>
+                    <button class="action-btn" aria-label="add to cart" data-id="7" data-name="Elastic band"
+                      data-price="8.00">
+                      <ion-icon name="bag-handle-outline" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
-                    <button class="action-btn" aria-label="add to wishlist">
-                      <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                    <button class="action-btn wishlist-btn" aria-label="add to wishlist" data-id="7"
+                      data-name="Elastic band" data-price="8.00">
+                      <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
                     <button class="action-btn" aria-label="compare">
-                      <ion-icon name="repeat-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </button>
                   </div>
                 </div>
                 <div class="card-content">
                   <div class="price">
-                    <span class="span" style="color: rgb(255, 255, 255);">$8.00</span>
+                    <span class="span" style="color: rgb(255, 255, 255)">$8.00</span>
                   </div>
                   <h3>
-                    <a href="#" class="card-title" style="color: rgb(255, 255, 255);">Elastic band</a>
+                    <a href="#" class="card-title" style="color: rgb(255, 255, 255)">Elastic band</a>
                   </h3>
                   <div class="card-rating">
                     <div class="rating-wrapper" aria-label="5 star rating">
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
                     </div>
-
                   </div>
                 </div>
               </div>
             </li>
-            
           </ul>
         </div>
       </section>
@@ -513,22 +557,37 @@
           <ul class="banner-list">
             <li>
               <div class="banner-card banner-card-1 has-before hover:shine">
-                <p class="card-subtitle" style="color: rgb(0, 0, 0);">New Collection</p>
-                <h2 class="h2 card-title" style="color: rgb(0, 0, 0);">Discover Our Products</h2>
-                <a href="#" class="btn btn-secondary"
-                  style="color: rgb(255, 255, 255); background-color: rgb(242, 156, 190);">Explore More</a>
-                <div class="has-bg-image" style="background-image: url('./assets/images/banner-1.jpg')"></div>
+                <p class="card-subtitle" style="color: rgb(0, 0, 0)">
+                  New Collection
+                </p>
+                <h2 class="h2 card-title" style="color: rgb(0, 0, 0)">
+                  Discover Our Products
+                </h2>
+                <a href="#" class="btn btn-secondary" style="
+                      color: rgb(255, 255, 255);
+                      background-color: rgb(242, 156, 190);
+                    ">Explore More</a>
+                <div class="has-bg-image" style="
+                      background-image: url('./assets/images/banner-1.jpg');
+                    "></div>
               </div>
             </li>
             <li>
               <div class="banner-card banner-card-2 has-before hover:shine">
-                <h2 class="h2 card-title" style="color: rgb(255, 255, 255);">25% off Everything</h2>
-                <p class="card-text" style="color: rgb(255, 255, 255);">Makeup with extended range in colors for every
-                  human.</p>
-                <a href="#" class="btn btn-secondary"
-                  style="color: rgb(255, 255, 255); background-color: rgb(242, 156, 190);">Shop Sale</a>
-                <div class="has-bg-image"
-                  style="background-image: url('./assets/images/banner-2.png'); color: rgb(242, 156, 190);"></div>
+                <h2 class="h2 card-title" style="color: rgb(255, 255, 255)">
+                  25% off Everything
+                </h2>
+                <p class="card-text" style="color: rgb(255, 255, 255)">
+                  Makeup with extended range in colors for every human.
+                </p>
+                <a href="#" class="btn btn-secondary" style="
+                      color: rgb(255, 255, 255);
+                      background-color: rgb(242, 156, 190);
+                    ">Shop Sale</a>
+                <div class="has-bg-image" style="
+                      background-image: url('./assets/images/banner-2.png');
+                      color: rgb(242, 156, 190);
+                    "></div>
               </div>
             </li>
           </ul>
@@ -536,69 +595,100 @@
       </section>
 
       <!-- FEATURE SECTION -->
-    <section class="section feature" aria-label="feature" data-section>
-      <div class="container">
-        <h2 class="h2-large section-title" style="color:rgb(242, 156, 190);">Why Shop with Queen Dynasty Studio?</h2>
-        <ul class="flex-list">
-          <li class="flex-item">
-            <div class="feature-card">
-              <img src="./assets/images/feature-1.png" loading="lazy" alt="Community Building" class="card-icon">
-              <h3 class="h3 card-title" style="color: rgb(242, 156, 190);">Build a Community</h3>
-              <p class="card-text">Creating a supportive environment for young entrepreneurs.</p>
-            </div>
-          </li>
-          <li class="flex-item">
-            <div class="feature-card">
-              <img src="./assets/images/feature-2.png" width="204" height="236" loading="lazy" alt="Empowering Women" class="card-icon">
-              <h3 class="h3 card-title" style="color: rgb(242, 156, 190);">Empowering Women</h3>
-              <p class="card-text">Encouraging women to learn to do hair on their own.</p>
-            </div>
-          </li>
-          <li class="flex-item">
-            <div class="feature-card">
-              <img src="./assets/images/feature-3.png" width="204" height="236" loading="lazy" alt="Sisterhood" class="card-icon">
-              <h3 class="h3 card-title" style="color: rgb(242, 156, 190);">Sisterhood</h3>
-              <p class="card-text">Building strong relationships with young women in the Toronto area.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
+      <section class="section feature" aria-label="feature" data-section>
+        <div class="container">
+          <h2 class="h2-large section-title" style="color: rgb(242, 156, 190)">
+            Why Shop with Queen Dynasty Studio?
+          </h2>
+          <ul class="flex-list">
+            <li class="flex-item">
+              <div class="feature-card">
+                <img src="./assets/images/feature-1.png" loading="lazy" alt="Community Building" class="card-icon" />
+                <h3 class="h3 card-title" style="color: rgb(242, 156, 190)">
+                  Build a Community
+                </h3>
+                <p class="card-text">
+                  Creating a supportive environment for young entrepreneurs.
+                </p>
+              </div>
+            </li>
+            <li class="flex-item">
+              <div class="feature-card">
+                <img src="./assets/images/feature-2.png" width="204" height="236" loading="lazy" alt="Empowering Women"
+                  class="card-icon" />
+                <h3 class="h3 card-title" style="color: rgb(242, 156, 190)">
+                  Empowering Women
+                </h3>
+                <p class="card-text">
+                  Encouraging women to learn to do hair on their own.
+                </p>
+              </div>
+            </li>
+            <li class="flex-item">
+              <div class="feature-card">
+                <img src="./assets/images/feature-3.png" width="204" height="236" loading="lazy" alt="Sisterhood"
+                  class="card-icon" />
+                <h3 class="h3 card-title" style="color: rgb(242, 156, 190)">
+                  Sisterhood
+                </h3>
+                <p class="card-text">
+                  Building strong relationships with young women in the
+                  Toronto area.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
 
       <!-- OFFER SECTION -->
       <section class="section offer" id="offer" aria-label="offer" data-section>
         <div class="container">
           <figure class="offer-banner">
             <img src="./assets/images/glambox.png" width="205" height="308" loading="lazy" alt="offer products"
-              class="w-100">
+              class="w-100" />
             <img src="./assets/images/glambox.png" width="450" height="625" loading="lazy" alt="offer products"
-              class="w-100">
+              class="w-100" />
           </figure>
           <div class="offer-content">
             <p class="offer-subtitle">
-              <span class="span" style="color: rgb(242, 156, 190);">Special Offer</span>
+              <span class="span" style="color: rgb(242, 156, 190)">Special Offer</span>
               <span class="badge" aria-label="20% off"
-                style="color: rgb(242, 156, 190); background-color: black;">-20%</span>
+                style="color: rgb(242, 156, 190); background-color: black">-20%</span>
             </p>
-            <h2 class="h2-large section-title" style="color: rgb(255, 255, 255);">Exclusive Glam Boxes</h2>
-            <p class="section-text" style="color: rgb(255, 255, 255);">Our
-              products are designed for everyone.</p>
+            <h2 class="h2-large section-title" style="color: rgb(255, 255, 255)">
+              Exclusive Glam Boxes
+            </h2>
+            <p class="section-text" style="color: rgb(255, 255, 255)">
+              Our products are designed for everyone.
+            </p>
             <div class="countdown">
-              <span class="time" aria-label="days" style="color: rgb(242, 156, 190);">15</span>
-              <span class="time" aria-label="hours" style="color: rgb(242, 156, 190);">21</span>
-              <span class="time" aria-label="minutes" style="color: rgb(242, 156, 190);">46</span>
-              <span class="time" aria-label="seconds" style="color: rgb(242, 156, 190);">08</span>
+              <span class="time" aria-label="days" style="color: rgb(242, 156, 190)">15</span>
+              <span class="time" aria-label="hours" style="color: rgb(242, 156, 190)">21</span>
+              <span class="time" aria-label="minutes" style="color: rgb(242, 156, 190)">46</span>
+              <span class="time" aria-label="seconds" style="color: rgb(242, 156, 190)">08</span>
             </div>
-            <a href="#" class="btn btn-primary"
-              style="color: rgb(255, 255, 255); background-color: rgb(242, 156, 190);">Get Only $200.00</a>
+            <a href="#" class="btn btn-primary" style="
+                  color: rgb(255, 255, 255);
+                  background-color: rgb(242, 156, 190);
+                ">Get Only $200.00</a>
           </div>
         </div>
       </section>
+    </article>
+  </main>
 
-      <!-- FOOTER SECTION -->
-        <!-- FOOTER SECTION -->
-          
+  <div id="added-to-cart-modal" class="modal">
+    <div class="modal-content" style="background-color: #000000; border-color: rgb(242, 156, 190); text-align: center;">
+      <p style="color: rgb(255, 255, 255);">Item has been added to your cart.</p>
+      <button id="added-to-cart-ok-btn" style="color: rgb(255, 255, 255); margin: 0 auto;">OK</button>
+    </div>
+  </div>
+    
+  <!-- FOOTER SECTION -->
   <footer class="footer">
+    <hr style="color: rgb(242, 156, 190); background-color: rgb(242, 156, 190);">
+    <br>
     <div class="waves">
       <div class="wave" id="wave1"></div>
       <div class="wave" id="wave2"></div>
@@ -606,158 +696,139 @@
       <div class="wave" id="wave4"></div>
     </div>
     <ul class="social-icon">
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-linkedin"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
+      <li class="social-icon__item">
+        <a class="social-icon__link" href="https://www.instagram.com/queendynastystudio?igsh=dGR4NzU0eHM5bHli&utm_source=qr">
           <ion-icon name="logo-instagram"></ion-icon>
-        </a></li>
+        </a>
+      </li>
+      <li class="social-icon__item">
+        <a class="social-icon__link" href="https://youtube.com/@queendynastystudios9077?si=S6zqgQlv2zZ9ijgQ">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+      </li>
+      <li class="social-icon__item">
+        <a class="social-icon__link" href="https://www.tiktok.com/@queendynastystudios?_t=8msNxPjSJi1&_r=1">
+          <ion-icon name="logo-tiktok"></ion-icon>
+        </a>
+      </li>
+      </li>
     </ul>
     <ul class="menu">
       <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">Signup to be a creator </a></li>
-      <li class="menu__item"><a class="menu__link" href="#">Shop</a></li>
+      <li class="menu__item">
+        <a class="menu__link" href="creator.html">Signup to be a creator </a>
+      </li>
+      <li class="menu__item"><a class="menu__link" href="#shop">Shop</a></li>
     </ul>
-    <p style="text-align: center; display: flex; justify-content: center; margin-top: 20px;"  >&copy;2024 QDR | All Rights Reserved</p>
+    <p style="
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+        ">
+      &copy;2024 QDR | All Rights Reserved
+    </p>
   </footer>
-  
+
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
- 
-
-    </article>
-  </main>
 
   <!-- custom js link -->
   <script src="./assets/js/script.js" defer></script>
-  <!-- ionicon link -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function(){
-      emailjs.init("to52LqUt1QWtFj2cC"); // Replace with your EmailJS user ID
-    })();
-  </script>
 
   <script>
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
+    function showModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.style.display = 'flex';
+    }
+  
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.style.display = 'none';
+    }
+  
+    document.getElementById('added-to-cart-ok-btn').addEventListener('click', () => {
+      closeModal('added-to-cart-modal');
+    });
+  
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
     function addToCart(product) {
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      if (!cart.find(item => item.id === product.id)) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existingProduct = cart.find((item) => item.id === product.id);
+  
+      if (existingProduct) {
+        existingProduct.quantity += 1; // Optionally increase quantity
+      } else {
         cart.push(product);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartPage();
+        showModal('added-to-cart-modal');
       }
-    }
-
-    function removeFromCart(productId) {
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart = cart.filter(item => item.id !== productId);
-      localStorage.setItem('cart', JSON.stringify(cart));
+  
+      localStorage.setItem("cart", JSON.stringify(cart));
       updateCartPage();
-      document.querySelectorAll(`.action-btn[data-id="${productId}"]`).forEach(button => {
-        button.classList.remove('active');
-      });
     }
+  
+    function removeFromCart(productId) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart = cart.filter((item) => item.id !== productId);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartPage();
+      document
+        .querySelectorAll(`.action-btn[data-id="${productId}"]`)
+        .forEach((button) => {
+          button.classList.remove("active");
+        });
+    }
+  
     function updateCartPage() {
-      const cartContainer = document.getElementById('cart-container');
+      const cartContainer = document.getElementById("cart-container");
       if (!cartContainer) return; // If cart-container is not present, exit the function
-      cartContainer.innerHTML = ''; // Clear current cart items
-
-      cart.forEach(item => {
-        const itemElement = document.createElement('div');
-        itemElement.innerHTML = `<p>${item.name} - ${item.price}</p>`;
+  
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cartContainer.innerHTML = ""; // Clear current cart items
+  
+      cart.forEach((item) => {
+        const itemElement = document.createElement("div");
+        itemElement.innerHTML = `<p>${item.name} - ${item.price} x ${item.quantity}</p>`;
         cartContainer.appendChild(itemElement);
       });
     }
-
-    document.querySelectorAll('.action-btn[data-id]').forEach(button => {
-      button.addEventListener('click', (event) => {
-        const productId = event.target.getAttribute('data-id');
-        const productName = event.target.getAttribute('data-name');
-        const productPrice = parseFloat(event.target.getAttribute('data-price'));
-        const productImage = event.target.closest('.shop-card').querySelector('img').src;
-
-        if (event.target.classList.contains('active')) {
+  
+    document.querySelectorAll(".action-btn[data-id]").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const target = event.target.closest(".action-btn");
+        const productId = target.getAttribute("data-id");
+        const productName = target.getAttribute("data-name");
+        const productPrice = parseFloat(target.getAttribute("data-price"));
+        const productImage = target.closest(".shop-card").querySelector("img").src;
+  
+        const product = {
+          id: productId,
+          name: productName,
+          price: productPrice,
+          image: productImage,
+          quantity: 1,
+        };
+  
+        if (target.classList.contains("active")) {
           // Remove from cart
           removeFromCart(productId);
-          event.target.classList.remove('active');
+          target.classList.remove("active");
         } else {
           // Add to cart
-          const product = {
-            id: productId,
-            name: productName,
-            price: productPrice,
-            image: productImage,
-            quantity: 1
-          };
           addToCart(product);
-          event.target.classList.add('active');
+          target.classList.add("active");
+          if (target.classList.contains("wishlist-btn")) {
+            window.location.href = "cart.html";
+          }
         }
       });
     });
-    document.addEventListener('DOMContentLoaded', updateCartPage);
+  
+    document.addEventListener("DOMContentLoaded", updateCartPage);
   </script>
-
-<script>
-  document.getElementById('checkout-btn').addEventListener('click', () => {
-    const checkoutForm = document.getElementById('checkout-form');
-    checkoutForm.style.display = checkoutForm.style.display === 'none' ? 'block' : 'none';
-  });
-
-  document.getElementById('checkout-details').addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent default form submission
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const address = document.getElementById('address').value;
-    const city = document.getElementById('city').value;
-    const state = document.getElementById('state').value;
-    const zip = document.getElementById('zip').value;
-
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Prepare email content
-    let emailContent = `Customer Information:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}, ${city}, ${state}, ${zip}\n\nProducts:\n`;
-
-    cart.forEach(item => {
-      emailContent += `Product ID: ${item.id}, Name: ${item.name}, Price: $${item.price}, Quantity: ${item.quantity}\n`;
-    });
-
-    // Send email using EmailJS
-    emailjs.send('service_q7pf937', 'template_1oqbjqe', {
-      to_email: 'guanman2020@gmail.com',
-      customer_name: name,
-      customer_email: email,
-      customer_phone: phone,
-      customer_address: `${address}, ${city}, ${state}, ${zip}`,
-      message: emailContent
-    })
-    .then((response) => {
-      console.log('SUCCESS!', response.status, response.text);
-      alert('Thank you for your order!');
-      // Clear the form after submission
-      document.getElementById('checkout-details').reset();
-      document.getElementById('checkout-form').style.display = 'none';
-      localStorage.removeItem('cart');
-      displayCartItems();
-    }, (error) => {
-      console.log('FAILED...', error);
-      alert('There was an error sending your order. Please try again.');
-    });
-  });
-</script>
-
+  
+ 
 </body>
 
 </html>
