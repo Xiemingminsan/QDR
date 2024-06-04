@@ -389,6 +389,10 @@
 
   --gradient: linear-gradient(to right, transparent 50%, var(--white_30) 100%);
 
+
+  .header-top.active {
+    top: -135px;
+  }
   /**
    * typography
    */
@@ -510,7 +514,6 @@ body {
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 li { list-style: none; }
@@ -580,7 +583,7 @@ body {
   #REUSED STYLE
 \*-----------------------------------*/
 
-.container { padding-inline: 15px; }
+.container { padding-inline: 3px; }
 
 .section { padding-block: var(--section-padding); }
 
@@ -774,14 +777,14 @@ body {
 }
 
 .alert {
-  background-color: var(--pale-spring-bud);
-  color: var(--black);
+  background-color: rgb(242, 156, 190);
+  color: rgb(1, 1, 1);
   font-size: var(--fs-7);
   text-transform: uppercase;
   font-weight: var(--fw-700);
   letter-spacing: 2px;
   text-align: center;
-  padding-block: 15px;
+  padding-block: 40px;
 }
 
 .header-top {
@@ -854,7 +857,7 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-  max-width: 350px;
+  max-width: 250px;
   width: 100%;
   padding: 25px 40px;
   z-index: 6;

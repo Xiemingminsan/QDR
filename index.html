@@ -26,15 +26,17 @@
 <body>
   <!-- HEADER -->
   <header class="header">
-    <div class="alert" style="color: rgb(0, 0, 0); background-color: rgb(242, 156, 190)">
-      <p class="alert-text">Thank you for being with us!!</p>
+    <div class="alert">
+
+        <p class="alert-text">Thank you for being with us!!</p>
     </div>
+
     <div class="header-top" data-header>
-      <div class="container">
-        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-          <span class="line line-1"></span>
-          <span class="line line-2"></span>
-          <span class="line line-3"></span>
+      <div class="container" style="background-color: #000000;">
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler style="color: pink; ">
+          <span class="line line-1" style="background-color: pink;"></span>
+          <span class="line line-2"  style="background-color: pink;"></span>
+          <span class="line line-3"  style="background-color: pink;"></span>
         </button>
         <div class="input-wrapper">
           <input type="search" name="search" class="search-field"
@@ -48,6 +50,12 @@
           <img src="./assets/images/logo.jpg" width="179" height="26" alt="Glowing" />
         </a>
         <div class="header-actions">
+          <button id="theme-toggle" class="header-action-btn" aria-label="cart">
+            <a href="cart.html">
+              <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190); border-radius: 16">
+              </ion-icon>
+            </a>
+          </button>
           <button class="header-action-btn">
             <a href="#glambox">
               <ion-icon name="person-outline" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
@@ -58,12 +66,7 @@
               <ion-icon name="star-outline" aria-hidden="true" style="color: rgb(242, 156, 190)"></ion-icon>
             </a>
           </button>
-          <button id="theme-toggle" class="header-action-btn" aria-label="cart">
-            <a href="cart.html">
-              <ion-icon name="cart" aria-hidden="true" style="color: rgb(242, 156, 190); border-radius: 16">
-              </ion-icon>
-            </a>
-          </button>
+       
         </div>
         <nav class="navbar">
           <ul class="navbar-list">
@@ -84,14 +87,12 @@
 
   <!-- MOBILE NAVBAR -->
   <div class="sidebar">
-    <div class="mobile-navbar" data-navbar>
+    <div class="mobile-navbar" data-navbar style="background-color: #000000;">
       <div class="wrapper">
         <a href="index.html" class="logo">
           <img src="./assets/images/logo.jpg" width="179" height="26" alt="Queen Dynasty Studio" />
         </a>
-        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-        </button>
+        
       </div>
       <ul class="navbar-list">
         <li><a href="#home" class="navbar-link" data-nav-link>Home</a></li>
