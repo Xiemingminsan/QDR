@@ -102,14 +102,15 @@
     <div class="overlay" data-nav-toggler data-overlay></div>
   </div>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <article>
+ 
       <!-- HERO SECTION -->
       <section class="section hero" id="home" aria-label="hero" data-section>
         <div class="container">
+          
           <ul class="has-scrollbar">
+          
             <li class="scrollbar-item">
+        
               <div class="hero-card has-bg-image" style="
                     background-image: url('./assets/images/hero-banner-1.jpg');
                   ">
@@ -124,14 +125,15 @@
                   <p class="price" style="color: white">
                     Starting at $269.99
                   </p>
-                  <p href="#glambox" class style="
-                        color: rgb(242, 156, 190);
-                        background-color: transparent;
-                        pointer-events: none;
-                        text-align: left;
-                      ">
-                    Shop Now
-                  </p>
+                  <a href="#shop" class style="
+                  color: rgb(242, 156, 190);
+                  background-color: transparent;
+                  pointer-events: all;
+                  text-align: left;
+                ">
+              Shop Now
+          </a>
+               
                 </div>
               </div>
             </li>
@@ -148,14 +150,14 @@
                     products.
                   </p>
                   <p class="price" style="color: white">Starting at $15.90</p>
-                  <p href="#glambox" class style="
+                  <a href="#shop" class style="
                         color: rgb(242, 156, 190);
                         background-color: transparent;
-                        pointer-events: none;
+                       
                         text-align: left;
                       ">
                     Shop Now
-                  </p>
+                </a>
                 </div>
               </div>
             </li>
@@ -173,14 +175,14 @@
                   <p class="price" style="color: white">
                     Starting at $272.00
                   </p>
-                  <p href="#glambox" class style="
+                  <a href="#glambox" class style="
                         color: rgb(242, 156, 190);
                         background-color: transparent;
-                        pointer-events: none;
+                    
                         text-align: left;
                       ">
                     Shop Now
-                  </p>
+                </a>
                 </div>
               </div>
             </li>
@@ -189,7 +191,7 @@
       </section>
 
       <!-- GLAMBOX SECTION -->
-      <section class="section glam-box" id="glambox" aria-label="glam box" data-section>
+      <section class="section glam-box" id="glambox" aria-label="glam box"  name="glambox">
         <div class="container">
           <h2 class="h2 section-title" style="color: rgb(255, 255, 255)">
             Our Special Glam Boxes
@@ -198,7 +200,9 @@
           <ul class="has-scrollbar">
             <li class="scrollbar-item">
               <div class="shop-card">
+                <a href="straight-glam-box.html">
                 <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                
                   <img src="./assets/images/b3.png" alt="Straight Glam Box" width="540" height="720" loading="lazy"
                     class="img-cover" />
                   <div class="card-actions">
@@ -209,12 +213,14 @@
                   </div>
                 </div>
                 <h3 style="text-align: center; color: rgb(222, 217, 219)">
-                  Straight Glam Box
+                <a href="straight-glam-box.html"> Straight Glam Box</a> 
                 </h3>
+                </a>
               </div>
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
+                <a href="body-wave-glam-box.html">
                 <div class="card-banner img-holder" style="--width: 540; --height: 720">
                   <img src="./assets/images/glambox2.png" alt="Body Wave Glam Box" width="540" height="720"
                     loading="lazy" class="img-cover" />
@@ -226,12 +232,14 @@
                   </div>
                 </div>
                 <h3 style="text-align: center; color: rgb(255, 255, 255)">
-                  Body Wave Glam Box
+                  <a href="body-wave-glam-box.html">Body Wave Glam Box</a>
+                </a>
                 </h3>
               </div>
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
+                <a href="wet-curly-glam-box.html">
                 <div class="card-banner img-holder" style="--width: 540; --height: 720">
                   <img src="./assets/images/g4.jpg" alt="Wet Curly Glam Box" width="540" height="720" loading="lazy"
                     class="img-cover" />
@@ -244,12 +252,13 @@
                   </div>
                 </div>
                 <h3 style="text-align: center; color: rgb(255, 255, 255)">
-                  Wet Curly Glam Box
+                  <a href="wet-curly-glam-box.html"> Wet Curly Glam Box</a>
                 </h3>
               </div>
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
+                <a href="curly-glam-box.html">
                 <div class="card-banner img-holder" style="--width: 540; --height: 720">
                   <img src="./assets/images/g5.jpg" alt="Curly Glam Box" width="540" height="720" loading="lazy"
                     class="img-cover" />
@@ -261,7 +270,7 @@
                   </div>
                 </div>
                 <h3 style="text-align: center; color: rgb(255, 255, 255)">
-                  Curly Glam Box
+                  <a href="curly-glam-box.html"> Curly Glam Box</a>
                 </h3>
               </div>
             </li>
@@ -675,8 +684,8 @@
           </div>
         </div>
       </section>
-    </article>
-  </main>
+    
+
 
   <div id="added-to-cart-modal" class="modal">
     <div class="modal-content" style="background-color: #000000; border-color: rgb(242, 156, 190); text-align: center;">
@@ -737,6 +746,18 @@
   <script src="./assets/js/script.js" defer></script>
 
   <script>
+document.querySelectorAll('.has-scrollbar a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default scrolling
+        const target = document.querySelector(this.hash);
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth' // Optional: Enable smooth scrolling
+            });
+        }
+    });
+});
+
     function showModal(modalId) {
       const modal = document.getElementById(modalId);
       modal.style.display = 'flex';
