@@ -624,3 +624,6 @@ svg:not(:root) {
     background-color: var(--primary-color-hover, rgb(200, 128, 160));
   }
   
+  .footer__page li {
+    color: hsla(0, 0%, 0%, 0.6) !important;
+}
