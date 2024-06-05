@@ -240,7 +240,26 @@ footer {
   }
 }
 
+.header-actions{
+  margin-top: 10px  ;
+}
 
+.header-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
 
 </style>
   
@@ -250,46 +269,27 @@ footer {
   <!-- HEADER -->
   <header class="header">
     <div class="alert" style="color: rgb(0, 0, 0); background-color: rgb(242, 156, 190);">
-      <p class="alert-text"> Thank you for being with us!! </p>
+        <p class="alert-text">Thank you for being with us!!</p>
     </div>
     <div class="header-top" data-header>
-      <div class="container">
-        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-          <span class="line line-1"></span>
-          <span class="line line-2"></span>
-          <span class="line line-3"></span>
-        </button>
-        <div class="input-wrapper">
-          <input type="search" name="search" class="search-field" style=" border-color: rgb(0, 0, 0); ">
-          <button class="search-submit" aria-label="search">
-            <ion-icon name="search-outline" aria-hidden="true" style="background-color: rgb(0, 0, 0); color: rgb(0, 0, 0);"></ion-icon>
-          </button>
+        <div class="container">
+            <div class="header-center">
+                <a href="index.html" class="logo">
+                    <img src="./assets/images/logo.jpg" width="179" height="26" alt="Glowing">
+                </a>
+            </div>
+            <div class="header-actions">
+              <button id="theme-toggle" class="header-action-btn" aria-label="cart">
+                <a href="cart.html">
+                    <ion-icon name="cart" aria-hidden="true" style=" color: rgb(242, 156, 190); border-radius: 16;">
+                    </ion-icon>
+                </a>
+            </button> 
+            </div>
         </div>
-        <a href="index.html" class="logo">
-          <img src="./assets/images/logo.jpg" width="179" height="26" alt="Glowing">
-        </a>
-        <div class="header-actions">
-          <button class="header-action-btn">
-            <ion-icon name="person-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-          </button>
-          <button class="header-action-btn" aria-label="favourite item">
-            <ion-icon name="star-outline" aria-hidden="true" style=" color: rgb(242, 156, 190);"></ion-icon>
-          </button>
-          <button id="theme-toggle" class="header-action-btn" aria-label="cart">
-            <a href="cart.html">
-              <ion-icon name="cart" aria-hidden="true" style=" color: rgb(242, 156, 190); border-radius: 16;">
-              </ion-icon>
-            </a>
-          </button>
-        </div>
-        <nav class="navbar">
-          <ul class="navbar-list">
-            <li><a href="index.html" class="navbar-link has-after" style=" color: rgb(242, 156, 190);">Home</a></li>
-          </ul>
-        </nav>
-      </div>
     </div>
-  </header>
+</header>
+
 
   <!-- CART -->
   <main>
