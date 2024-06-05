@@ -3,12 +3,13 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Queen Dynasty Studio - Cart</title>
 
   <!-- favicon -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
   <!-- custom css link -->
   <link rel="stylesheet" href="./assets/css/style.css" />
@@ -107,90 +108,85 @@
       <!-- HERO SECTION -->
       <section class="section hero" id="home" aria-label="hero" data-section>
         <div class="container">
-          
-          <ul class="has-scrollbar">
-          
-            <li class="scrollbar-item">
-        
-              <div class="hero-card has-bg-image" style="
-                    background-image: url('./assets/images/hero-banner-1.jpg');
-                  ">
-                <div class="card-content">
-                  <h1 class="h1 hero-title" style="color: white">
-                    Embrace Your Beauty
-                  </h1>
-                  <p class="hero-text" style="color: white">
-                    Providing exceptional service to black girls who love
-                    expressing themselves through their hair.
-                  </p>
-                  <p class="price" style="color: white">
-                    Starting at $269.99
-                  </p>
-                  <a href="#glambox"  class style="
-                  color: rgb(242, 156, 190);
-                  background-color: transparent;
-                  pointer-events: all;
-                  text-align: left;
-                ">
-              Shop Now
-          </a>
-               
+          <div class="carousel">
+            <button class="carousel-arrow left-arrow" aria-label="Previous">❮</button>
+            <ul class="has-scrollbar">
+              <li class="scrollbar-item">
+                <div class="hero-card has-bg-image" style="background-image: url('./assets/images/hero-banner-1.jpg');">
+                  <div class="card-content">
+                    <h1 class="h1 hero-title" style="color: white">Embrace Your Beauty</h1>
+                    <p class="hero-text" style="color: white">
+                      Providing exceptional service to black girls who love
+                      expressing themselves through their hair.
+                    </p>
+                    <p class="price" style="color: white">Starting at $269.99</p>
+                    <a href="#glambox" class="btn" style="color: rgb(242, 156, 190); background-color: transparent; pointer-events: all; text-align: left;">Shop Now</a>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="scrollbar-item">
-              <div class="hero-card has-bg-image" style="
-                    background-image: url('./assets/images/hero-banner-2.jpg');
-                  ">
-                <div class="card-content">
-                  <h1 class="h1 hero-title" style="color: white">
-                    Style with Confidence
-                  </h1>
-                  <p class="hero-text" style="color: white">
-                    Express your unique style with our top-quality hair
-                    products.
-                  </p>
-                  <p class="price" style="color: white">Starting at $15.90</p>
-                  <a href="#shop" class style="
-                        color: rgb(242, 156, 190);
-                        background-color: transparent;
-                       
-                        text-align: left;
-                      ">
-                    Shop Now
-                </a>
+              </li>
+              <li class="scrollbar-item">
+                <div class="hero-card has-bg-image" style="background-image: url('./assets/images/hero-banner-2.jpg');">
+                  <div class="card-content">
+                    <h1 class="h1 hero-title" style="color: white">Style with Confidence</h1>
+                    <p class="hero-text" style="color: white">Express your unique style with our top-quality hair products.</p>
+                    <p class="price" style="color: white">Starting at $15.90</p>
+                    <a href="#shop" class="btn" style="color: rgb(242, 156, 190); background-color: transparent; text-align: left;">Shop Now</a>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="scrollbar-item">
-              <div class="hero-card has-bg-image" style="
-                    background-image: url('./assets/images/hero-banner-3.jpg');
-                  ">
-                <div class="card-content">
-                  <h1 class="h1 hero-title" style="color: white">
-                    Your Hair, Your Way
-                  </h1>
-                  <p class="hero-text" style="color: white">
-                    Find the perfect products to enhance your natural beauty.
-                  </p>
-                  <p class="price" style="color: white">
-                    Starting at $272.00
-                  </p>
-                  <a href="#glambox" class style="
-                        color: rgb(242, 156, 190);
-                        background-color: transparent;
-                    
-                        text-align: left;
-                      ">
-                    Shop Now
-                </a>
+              </li>
+              <li class="scrollbar-item">
+                <div class="hero-card has-bg-image" style="background-image: url('./assets/images/hero-banner-3.jpg');">
+                  <div class="card-content">
+                    <h1 class="h1 hero-title" style="color: white">Your Hair, Your Way</h1>
+                    <p class="hero-text" style="color: white">Find the perfect products to enhance your natural beauty.</p>
+                    <p class="price" style="color: white">Starting at $272.00</p>
+                    <a href="#glambox" class="btn" style="color: rgb(242, 156, 190); background-color: transparent; text-align: left;">Shop Now</a>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+            <button class="carousel-arrow right-arrow" aria-label="Next">❯</button>
+          </div>
         </div>
       </section>
 
+
+      <!-- OFFER SECTION -->
+
+      <section class="section offer" id="offer" aria-label="offer" data-section>
+        <div class="container">
+          <figure class="offer-banner">
+            <img src="./assets/images/glambox.png" width="250" height="425" loading="lazy" alt="offer products"
+            class="w-100" />
+          </figure>
+          <div class="offer-content">
+            <p class="offer-subtitle">
+              <span class="span" style="color: rgb(242, 156, 190)">Special Offer</span>
+              <span class="badge" aria-label="20% off"
+                style="color: rgb(242, 156, 190); background-color: black">-20%</span>
+            </p>
+            <h2 class="h2-large section-title" style="color: rgb(255, 255, 255)">
+              Exclusive Glam Boxes
+            </h2>
+            <p class="section-text" style="color: rgb(255, 255, 255)">
+              Our products are designed for everyone.
+            </p>
+            <div class="countdown">
+              <span class="time" aria-label="days" style="color: rgb(242, 156, 190)">15</span>
+              <span class="time" aria-label="hours" style="color: rgb(242, 156, 190)">21</span>
+              <span class="time" aria-label="minutes" style="color: rgb(242, 156, 190)">46</span>
+              <span class="time" aria-label="seconds" style="color: rgb(242, 156, 190)">08</span>
+            </div>
+            <a href="#" class="btn btn-primary" style="
+                  color: rgb(0, 0, 0);
+                  background-color: rgb(242, 156, 190);
+                ">Get Only $200.00</a>
+          </div>
+        </div>
+      </section>
+<br>
+
+<!-- COLLECTION SECTION -->
       <section class="section collection" id="collection" aria-label="collection" data-section>
         <div class="container">
           <ul class="collection-list">
@@ -220,25 +216,25 @@
       </section>
 
       <!-- GLAMBOX SECTION -->
-      <section class="section glam-box" id="glambox" aria-label="glam box"  name="glambox">
+      <section class="section glam-box" id="glambox" aria-label="glam box" name="glambox">
         <div class="container">
-          <h2 class="h2 section-title" style="color: rgb(255, 255, 255)">
+          <h2 class="h2-section-title" style="color: rgb(242, 156, 190); font-size: 34px;" >
             Our Special Glam Boxes
           </h2>
-          <br />
-          <ul class="has-scrollbar">
-            <li class="scrollbar-item">
+          <div class="carousel">
+            <button class="carousel-arrow left-arrow" aria-label="Previous">❮</button>
+            <ul class="has-scrollbar">
+              <li class="scrollbar-item"> 
               <div class="shop-card">
-                <a href="straight-glam-box.html">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720">
                 
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720">
                   <img src="./assets/images/b3.png" alt="Straight Glam Box" width="540" height="720" loading="lazy"
                     class="img-cover" />
                   <div class="card-actions">
                     <a href="straight-glam-box.html" class="btn btn-primary" style="
                           background-color: transparent;
                           color: rgb(242, 156, 190);
-                        ">More</a>
+                        ">More
                   </div>
                 </div>
                 <h3 style="text-align: center; color: rgb(222, 217, 219)">
@@ -249,8 +245,8 @@
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <a href="body-wave-glam-box.html">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+              
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720">
                   <img src="./assets/images/glambox2.png" alt="Body Wave Glam Box" width="540" height="720"
                     loading="lazy" class="img-cover" />
                   <div class="card-actions">
@@ -268,11 +264,10 @@
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <a href="wet-curly-glam-box.html">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+               
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720">
                   <img src="./assets/images/g4.jpg" alt="Wet Curly Glam Box" width="540" height="720" loading="lazy"
                     class="img-cover" />
-                  <h3>Wet Curly Glam Box</h3>
                   <div class="card-actions">
                     <a href="wet-curly-glam-box.html" class="btn btn-primary" style="
                           background-color: transparent;
@@ -287,8 +282,8 @@
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <a href="curly-glam-box.html">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+               
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720">
                   <img src="./assets/images/g5.jpg" alt="Curly Glam Box" width="540" height="720" loading="lazy"
                     class="img-cover" />
                   <div class="card-actions">
@@ -304,8 +299,10 @@
               </div>
             </li>
           </ul>
+          <button class="carousel-arrow right-arrow" aria-label="Next">❯</button>
         </div>
-      </section>
+      </div>
+    </section>
 
       <!-- SHOP SECTION -->
       <section class="section shop" id="shop" aria-label="shop" data-section>
@@ -318,11 +315,13 @@
               <span class="span" style="color: rgb(242, 156, 190)">Queen Wear Crowns</span>
             </a>
           </div>
-          <ul class="has-scrollbar">
+          <div class="carousel">
+            <button class="carousel-arrow left-arrow" aria-label="Previous">❮</button>
+            <ul class="has-scrollbar shopshop" >  
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720">
-                  <img src="assets/images/glue.png" width="540" height="720" loading="lazy" alt="Wig glue"
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720">
+                  <img src="assets/images/glue.jpg" width="540" height="720" loading="lazy" alt="Wig glue"
                     class="img-cover" />
                   <div class="card-actions">
                     <button class="action-btn" aria-label="add to cart" data-id="1" data-name="Wig glue"
@@ -359,7 +358,7 @@
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720">
                   <img src="assets/images/waxstick.png" width="540" height="720" loading="lazy" alt="Wax Sticks"
                     class="img-cover" />
                   <div class="card-actions">
@@ -397,7 +396,7 @@
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720">
                   <img src="assets/images/tintspray.png" width="540" height="720" loading="lazy" alt="Lace tint"
                     class="img-cover" />
                   <div class="card-actions">
@@ -435,7 +434,7 @@
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720">
                   <img src="assets/images/edgecontrol.jpg" width="540" height="720" loading="lazy" alt="Edge Control"
                     class="img-cover" />
                   <div class="card-actions">
@@ -473,7 +472,7 @@
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720">
                   <img src="assets/images/lace.jpg" width="540" height="720" loading="lazy" alt="Lace Adhesive"
                     class="img-cover" />
                   <div class="card-actions">
@@ -511,7 +510,7 @@
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720">
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720">
                   <img src="assets/images/bonnet.jpg" width="540" height="720" loading="lazy" alt="Bonnet"
                     class="img-cover" />
                   <div class="card-actions">
@@ -549,8 +548,8 @@
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720">
-                  <img src="assets/images/elastic.png" width="540" height="720" loading="lazy" alt="Elastic band"
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720">
+                  <img src="assets/images/elastic.jpg" width="540" height="720" loading="lazy" alt="Elastic band"
                     class="img-cover" />
                   <div class="card-actions">
                     <button class="action-btn" aria-label="add to cart" data-id="7" data-name="Elastic band"
@@ -586,8 +585,10 @@
               </div>
             </li>
           </ul>
+          <button class="carousel-arrow right-arrow" aria-label="Next">❯</button>
         </div>
-      </section>
+      </div>
+    </section>
 
       <!-- BANNER SECTION -->
       <section class="section banner" aria-label="banner" data-section>
@@ -602,11 +603,11 @@
                   Discover Our Products
                 </h2>
                 <a href="#" class="btn btn-secondary" style="
-                      color: rgb(255, 255, 255);
+                      color: rgb(0, 0, 0);
                       background-color: rgb(242, 156, 190);
                     ">Explore More</a>
                 <div class="has-bg-image" style="
-                      background-image: url('./assets/images/banner-1.jpg');
+                      background-image: url('./assets/images/dfsd.png' );
                     "></div>
               </div>
             </li>
@@ -619,7 +620,7 @@
                   Makeup with extended range in colors for every human.
                 </p>
                 <a href="#" class="btn btn-secondary" style="
-                      color: rgb(255, 255, 255);
+                      color: rgb(0, 0, 0);
                       background-color: rgb(242, 156, 190);
                     ">Shop Sale</a>
                 <div class="has-bg-image" style="
@@ -680,39 +681,7 @@
       </section>
 
       <!-- OFFER SECTION -->
-      <section class="section offer" id="offer" aria-label="offer" data-section>
-        <div class="container">
-          <figure class="offer-banner">
-            <img src="./assets/images/glambox.png" width="205" height="308" loading="lazy" alt="offer products"
-              class="w-100" />
-            <img src="./assets/images/glambox.png" width="450" height="625" loading="lazy" alt="offer products"
-              class="w-100" />
-          </figure>
-          <div class="offer-content">
-            <p class="offer-subtitle">
-              <span class="span" style="color: rgb(242, 156, 190)">Special Offer</span>
-              <span class="badge" aria-label="20% off"
-                style="color: rgb(242, 156, 190); background-color: black">-20%</span>
-            </p>
-            <h2 class="h2-large section-title" style="color: rgb(255, 255, 255)">
-              Exclusive Glam Boxes
-            </h2>
-            <p class="section-text" style="color: rgb(255, 255, 255)">
-              Our products are designed for everyone.
-            </p>
-            <div class="countdown">
-              <span class="time" aria-label="days" style="color: rgb(242, 156, 190)">15</span>
-              <span class="time" aria-label="hours" style="color: rgb(242, 156, 190)">21</span>
-              <span class="time" aria-label="minutes" style="color: rgb(242, 156, 190)">46</span>
-              <span class="time" aria-label="seconds" style="color: rgb(242, 156, 190)">08</span>
-            </div>
-            <a href="#" class="btn btn-primary" style="
-                  color: rgb(255, 255, 255);
-                  background-color: rgb(242, 156, 190);
-                ">Get Only $200.00</a>
-          </div>
-        </div>
-      </section>
+      
     
 
 
@@ -736,33 +705,34 @@
     <ul class="social-icon">
       <li class="social-icon__item">
         <a class="social-icon__link" href="https://www.instagram.com/queendynastystudio?igsh=dGR4NzU0eHM5bHli&utm_source=qr">
-          <ion-icon name="logo-instagram"></ion-icon>
+          <ion-icon name="logo-instagram" style="color: rgb(242, 156, 190);" ></ion-icon>
         </a>
       </li>
       <li class="social-icon__item">
         <a class="social-icon__link" href="https://youtube.com/@queendynastystudios9077?si=S6zqgQlv2zZ9ijgQ">
-          <ion-icon name="logo-youtube"></ion-icon>
+          <ion-icon name="logo-youtube" style="color: rgb(242, 156, 190);" ></ion-icon>
         </a>
       </li>
       <li class="social-icon__item">
         <a class="social-icon__link" href="https://www.tiktok.com/@queendynastystudios?_t=8msNxPjSJi1&_r=1">
-          <ion-icon name="logo-tiktok"></ion-icon>
+          <ion-icon name="logo-tiktok" style="color: rgb(242, 156, 190); " ></ion-icon>
         </a>
       </li>
       </li>
     </ul>
     <ul class="menu">
-      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#" style="color: rgb(242, 156, 190);">Home</a></li>
       <li class="menu__item">
-        <a class="menu__link" href="creator.html">Signup to be a creator </a>
+        <a class="menu__link" href="creator.html" style="color: rgb(242, 156, 190);" >Signup to be a creator </a>
       </li>
-      <li class="menu__item"><a class="menu__link" href="#shop">Shop</a></li>
+      <li class="menu__item"><a class="menu__link" href="#shop" style="color: rgb(242, 156, 190);" >Shop</a></li>
     </ul>
     <p style="
           text-align: center;
           display: flex;
           justify-content: center;
           margin-top: 20px;
+          color: rgb(242, 156, 190);
         ">
       &copy;2024 QDR | All Rights Reserved
     </p>
@@ -876,6 +846,33 @@ document.querySelectorAll('.has-scrollbar a[href^="#"]').forEach(link => {
     });
   
     document.addEventListener("DOMContentLoaded", updateCartPage);
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const carousels = document.querySelectorAll('.carousel');
+
+  carousels.forEach(carousel => {
+    const leftArrow = carousel.querySelector('.left-arrow');
+    const rightArrow = carousel.querySelector('.right-arrow');
+    const scrollContainer = carousel.querySelector('.has-scrollbar');
+
+    leftArrow.addEventListener('click', () => {
+      scrollContainer.scrollBy({
+        left: -scrollContainer.clientWidth,
+        behavior: 'smooth'
+      });
+    });
+
+    rightArrow.addEventListener('click', () => {
+      scrollContainer.scrollBy({
+        left: scrollContainer.clientWidth,
+        behavior: 'smooth'
+      });
+    });
+  });
+});
+
   </script>
   
  

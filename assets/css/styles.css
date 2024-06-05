@@ -11,7 +11,7 @@
     filter: blur(3px); /* Apply blur effect */
     z-index: -1; /* Ensure it's behind the form container */
   }
-
+  
 a {
     color: #4b35ef;
     text-decoration: none;

@@ -93,7 +93,7 @@
                         <option value="30">$460.00 - 30"</option>
                         <option value="32">$480.00 - 32"</option>
                       </select>
-                      <button class="btn btn-primary" onclick="addToCart('Curly Glam Box', document.getElementById('inch-selection').value)" style="color: rgb(255, 255, 255); background-color: rgb(242, 156, 190);">Add to Cart</button>
+                      <button class="btn btn-primary" onclick="addToCart('Curly Glam Box', document.getElementById('inch-selection').value)" style="color: rgb(0, 0, 0); background-color: rgb(242, 156, 190);">Add to Cart</button>
                     </div>
                   </div>
                 </li>
@@ -101,69 +101,72 @@
             </div>
           </section>
           <h2>Includes:</h2>
-          <ul class="has-scrollbar">
+          <div class="carousel">
+            <button class="carousel-arrow left-arrow" aria-label="Previous">❮</button>
+          <ul class="has-scrollbar glamglam">
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                  <img src="./assets/images/product-01.jpg" alt="Product 1" width="540" height="720" loading="lazy" class="img-cover">
-                  <h3>Wig glue - $20.63</h3>
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720;">
+                  <img src="./assets/images/product-01.jpg" alt="Product 1" width="540" height="720" loading="lazy" class="img-cover-glam">
                 </div>
               </div>
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                  <img src="./assets/images/elastic.png" alt="Product 2" width="540" height="720" loading="lazy" class="img-cover">
-                  <h3>Wax Sticks – $15.00</h3>
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720;">
+                  <img src="./assets/images/elastic.jpg" alt="Product 2" width="540" height="720" loading="lazy" class="img-cover-glam">
                 </div>
               </div>
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                  <img src="./assets/images/lace.jpg" alt="Product 3" width="540" height="720" loading="lazy" class="img-cover">
-                  <h3>Lace tint – $25.00</h3>
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720;">
+                  <img src="./assets/images/lace.jpg" alt="Product 3" width="540" height="720" loading="lazy" class="img-cover-glam">
                 </div>
               </div>
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                  <img src="./assets/images/glue.png" alt="Product 4" width="540" height="720" loading="lazy" class="img-cover">
-                  <h3>Edge Control - $15.90</h3>
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720;">
+                  <img src="./assets/images/glue.jpg" alt="Product 4" width="540" height="720" loading="lazy" class="img-cover-glam">
                 </div>
               </div>
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                  <img src="./assets/images/bonnet.jpg" alt="Product 5" width="540" height="720" loading="lazy" class="img-cover">
-                  <h3>Lace Adhesive – $10.00</h3>
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720;">
+                  <img src="./assets/images/bonnet.jpg" alt="Product 5" width="540" height="720" loading="lazy" class="img-cover-glam">
                 </div>
               </div>
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                  <img src="./assets/images/waxstick.png" alt="Product 6" width="540" height="720" loading="lazy" class="img-cover">
-                  <h3>Bonnet - $20.00</h3>
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720;">
+                  <img src="./assets/images/waxstick.png" alt="Product 6" width="540" height="720" loading="lazy" class="img-cover-glam">
                 </div>
               </div>
             </li>
             <li class="scrollbar-item">
               <div class="shop-card">
-                <div class="card-banner img-holder" style="--width: 540; --height: 720;">
-                  <img src="./assets/images/A4.jpg" alt="Product 7" width="540" height="720" loading="lazy" class="img-cover">
-                  <h3>Elastic band – $8.00</h3>
+                <div class="card-banner img-holder-glam" style="--width: 540; --height: 720;">
+                  <img src="./assets/images/A44.jpg" alt="Product 7" width="540" height="720" loading="lazy" class="img-cover-glam">
                 </div>
               </div>
             </li>
           </ul>
+          <button class="carousel-arrow right-arrow" aria-label="Next">❯</button>
+          </div>
       </section>
     </article>
   </main>
 
-  
+  <div id="added-to-cart-modal" class="modal">
+    <div class="modal-content" style="background-color: #000000; border-color: rgb(242, 156, 190); text-align: center;">
+      <p style="color: rgb(255, 255, 255);">Item has been added to your cart.</p>
+      <button id="added-to-cart-ok-btn" style="color: rgb(255, 255, 255); margin: 0 auto;">OK</button>
+    </div>
+  </div>
+
 <BR>
   <BR>
 
@@ -204,7 +207,47 @@
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+        <script>
+          
+        function showModal(modalId) {
+          const modal = document.getElementById(modalId);
+          modal.style.display = 'flex';
+        }
+      
+        function closeModal(modalId) {
+          const modal = document.getElementById(modalId);
+          modal.style.display = 'none';
+        }
+      
+        document.getElementById('added-to-cart-ok-btn').addEventListener('click', () => {
+          closeModal('added-to-cart-modal');
+        });
 
+          document.addEventListener('DOMContentLoaded', () => {
+        const carousels = document.querySelectorAll('.carousel');
+      
+        carousels.forEach(carousel => {
+          const leftArrow = carousel.querySelector('.left-arrow');
+          const rightArrow = carousel.querySelector('.right-arrow');
+          const scrollContainer = carousel.querySelector('.has-scrollbar');
+      
+          leftArrow.addEventListener('click', () => {
+            scrollContainer.scrollBy({
+              left: -scrollContainer.clientWidth,
+              behavior: 'smooth'
+            });
+          });
+      
+          rightArrow.addEventListener('click', () => {
+            scrollContainer.scrollBy({
+              left: scrollContainer.clientWidth,
+              behavior: 'smooth'
+            });
+          });
+        });
+      });
+      
+        </script>
 
   <script>
    function addToCart(productName, selectedInch) {
@@ -247,7 +290,7 @@
   }
 
   localStorage.setItem('cart', JSON.stringify(cart));
-  alert(`${productName} (${selectedInch}") added to cart.`);
+  showModal('added-to-cart-modal');  // Show the modal
   displayCartItems();  // Update the cart display
 }
   </script>
