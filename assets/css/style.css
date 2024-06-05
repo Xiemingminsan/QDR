@@ -27,6 +27,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
 
+.cartfooter{
+  
+  margin: 10px;
+
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -58,7 +64,7 @@ body::-webkit-scrollbar {
 /* Hide scrollbar for Firefox */
 body {
   scrollbar-width: none;
-  overflow: -moz-hidden-unscrollable;
+  overflow-x: hidden; 
 }
 
 /* Hide scrollbar for Internet Explorer and Edge */
@@ -602,7 +608,7 @@ body {
 
 .container { padding-inline: 3px; }
 
-.section { padding-block: 20px 0px }
+
 
 .has-bg-image {
   background-repeat: no-repeat;
@@ -1467,10 +1473,53 @@ body {
    * REUSED STYLE
    */
 
+   .h2glambox {
+    padding: 30px 0px;
+}
+
+.hidden2{
+  display: none;
+}
+
+.miyamor {
+  font-size: 20px;
+}
+   .glam-box {
+    margin: 40px 110px;
+}
+
   .container { max-width: 1300px; 
   margin: 20px;
   }
 
+  .banner{
+    margin: 42px 98px;
+  }
+
+  .feature{
+    margin: 84px 98px
+  }
+
+  
+  .shop{
+
+    margin: 0px 95px;
+  }
+  .shopbtn{
+
+    top: 0px;
+    position: relative;
+    left: -70px;
+  }
+
+  .collection {
+    padding-block-start: 0;
+    margin: 30px 70px;
+}
+
+  .offer{
+    margin: 0px 70px;
+  }
   .scrollbar-item { min-width: calc(20% - 24px); }
 
 
@@ -1486,9 +1535,9 @@ body {
   .nav-open-btn { display: none; }
 
   .header {
-    padding-block-end: 60px;
-    margin-block-end: 10px;
-  }
+    padding-block-end: 31px;
+    margin-block-end: -14px;
+}
 
   .header-top {
     position: unset;
@@ -1830,6 +1879,10 @@ h2 {
     align-content: space-evenly;
 }
 
+.hidden1{
+  display: none;
+}
+
   body{
     .h1 {
       font-size: 30px;
@@ -1920,6 +1973,10 @@ a {
   padding-block: 26px;
   z-index: 4;
   padding: 10px;
+}
+
+.h2glambox {
+  display: none; 
 }
 
 hero-card {
