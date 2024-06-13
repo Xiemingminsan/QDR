@@ -22,24 +22,20 @@
 
   <!-- preload images -->
   <link rel="preload" as="image" href="./assets/images/logo.png" />
-
+  
   <style>
-/* Hide add-to-cart-mobile button by default */
-  /* Hide add-to-cart-mobile button by default */
-  .heyjude {
+    /* Hide add-to-cart-mobile button by default */
+    .heyjude {
       display: none;
     }
-
+    
     /* Show add-to-cart-mobile button and hide stars on mobile devices */
     @media (max-width: 768px) {
       .card-rating .rating-wrapper {
-        display: none;
+        display: none; /* Hide star ratings on mobile */
       }
-      .heyjude {
-      display: block;
-    }
-
-    .myactions{
+  
+      .myactions{
     opacity: 1 !important;
     transform: translate(0, -50%) !important;
     transition: none !important;
@@ -49,8 +45,12 @@
     display: grid !important;
     gap: 10px !important;
   }
+      .heyjude {
+      display: block;
+    }
+      
       .add-to-cart-mobile {
-        display: inline-block;
+        display: inline-block; /* Show add-to-cart button on mobile */
         background-color: rgb(242, 156, 190);
         color: rgb(0, 0, 0);
         padding: 10px;
@@ -58,14 +58,11 @@
         border-radius: 5px;
         cursor: pointer;
         font-size: 14px;
-        margin-top: 10px;
       }
     }
-  </style>
-
-
-  </style>
-
+    
+      </style>
+    
 </head>
 
 <body>
@@ -119,12 +116,6 @@
             <li>
               <a href="index.html" class="navbar-link has-after" style="color: rgb(242, 156, 190)">Home</a>
             </li>
-            <li>
-              <a href="products.html" class="navbar-link has-after" style="color: rgb(242, 156, 190)">Shop</a>
-            </li>
-            <li>
-              <a href="#offer" class="navbar-link has-after" style="color: rgb(242, 156, 190)">Offer</a>
-            </li>
           </ul>
         </nav>
       </div>
@@ -142,135 +133,15 @@
       </div>
       <ul class="navbar-list">
         <li><a href="#home" class="navbar-link" data-nav-link>Home</a></li>
-        <li><a href="products.html" class="navbar-link" data-nav-link>Shop</a></li>
+        <li><a href="#shop" class="navbar-link" data-nav-link>Shop</a></li>
         <li><a href="#offer" class="navbar-link" data-nav-link>Offer</a></li>
       </ul>
     </div>
     <div class="overlay" data-nav-toggler data-overlay></div>
   </div>
 
- 
-      <!-- HERO SECTION -->
-      <section class="section hero" id="home" aria-label="hero" data-section>
-        <div class="container">
-          <div class="carousel">
-            <button class="carousel-arrow left-arrow" aria-label="Previous">❮</button>
-            <ul class="has-scrollbar">
-              <li class="scrollbar-item">
-                <div class="hero-card has-bg-image" style="background-image: url('./assets/images/hero-banner-1.jpg');">
-                  <div class="card-content">
-                    <h1 class="h1 hero-title" style="color: white">Embrace Your Beauty</h1>
-                    <p class="hero-text" style="color: white">
-                      Providing exceptional service to black girls who love
-                      expressing themselves through their hair.
-                    </p>
-                    <p class="price" style="color: white">Starting at $269.99</p>
-                    <a href="products.html" class="btn" style="color: rgb(242, 156, 190); background-color: transparent; pointer-events: all; text-align: left;">Shop Now</a>
-                  </div>
-                </div>
-              </li>
-              <li class="scrollbar-item">
-                <div class="hero-card has-bg-image" style="background-image: url('./assets/images/hero-banner-2.jpg');">
-                  <div class="card-content">
-                    <h1 class="h1 hero-title" style="color: white">Style with Confidence</h1>
-                    <p class="hero-text" style="color: white">Express your unique style with our top-quality hair products.</p>
-                    <p class="price" style="color: white">Starting at $15.90</p>
-                    <a href="products.html" class="btn" style="color: rgb(242, 156, 190); background-color: transparent; text-align: left;">Shop Now</a>
-                  </div>
-                </div>
-              </li>
-              <li class="scrollbar-item">
-                <div class="hero-card has-bg-image" style="background-image: url('./assets/images/hero-banner-3.jpg');">
-                  <div class="card-content">
-                    <h1 class="h1 hero-title" style="color: white">Your Hair, Your Way</h1>
-                    <p class="hero-text" style="color: white">Find the perfect products to enhance your natural beauty.</p>
-                    <p class="price" style="color: white">Starting at $272.00</p>
-                    <a href="products.html" class="btn" style="color: rgb(242, 156, 190); background-color: transparent; text-align: left;">Shop Now</a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <button class="carousel-arrow right-arrow" aria-label="Next">❯</button>
-          </div>
-        </div>
-      </section>
 
-
-      <!-- OFFER SECTION -->
-
-      <section class="section offer" id="offer" aria-label="offer" data-section>
-        <div class="container">
-          <figure class="offer-banner">
-            <img src="./assets/images/glambox.png" width="250" height="425" loading="lazy" alt="offer products"
-            class="w-100" />
-          </figure>
-          <div class="offer-content">
-            <p class="offer-subtitle">
-              <span class="span" style="color: rgb(242, 156, 190)">Special Offer</span>
-              <span class="badge" aria-label="20% off"
-                style="color: rgb(242, 156, 190); background-color: black">-20%</span>
-            </p>
-            <h2 class="h2-large section-title" style="color: rgb(255, 255, 255)">
-              Exclusive Glam Boxes
-            </h2>
-            <p class="section-text" style="color: rgb(255, 255, 255)">
-              Our products are designed for everyone.
-            </p>
-            <div class="countdown">
-              <span class="time" aria-label="days" style="color: rgb(242, 156, 190)">15</span>
-              <span class="time" aria-label="hours" style="color: rgb(242, 156, 190)">21</span>
-              <span class="time" aria-label="minutes" style="color: rgb(242, 156, 190)">46</span>
-              <span class="time" aria-label="seconds" style="color: rgb(242, 156, 190)">08</span>
-            </div>
-            <div class="shopbtn" style="
-           
-            display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
-          ">  
-            <a href="#" class="btn btn-primary" style=" color: rgb(0, 0, 0);
-            background-color: rgb(242, 156, 190);" >Get Only $200.00</a>
-                </div>
-          </div>
-        </div>
-      </section>
 <br>
-
-<!-- COLLECTION SECTION -->
-
-<div class="container">
-  <h2 class="h2-section-title h2glambox" style="color: rgb(242, 156, 190); font-size: 34px;" >
-    Collections
-  </h2>
-</div>
-      <section class="section collection" id="collection" aria-label="collection" data-section>
-        <div class="container">
-          <ul class="collection-list">
-            <li>
-              <div class="collection-card has-before hover:shine">
-                <h2 class="h2 card-title">Summer Collection</h2>
-                <p class="card-text">Starting at $20.00</p>
-                <div class="has-bg-image" style="background-image: url('./assets/images/glue.png')"></div>
-              </div>
-            </li>
-            <li>
-              <div class="collection-card has-before hover:shine">
-                <h2 class="h2 card-title">What’s New?</h2>
-                <p class="card-text">Get the Products</p>
-                <div class="has-bg-image" style="background-image: url('./assets/images/elastic.png')"></div>
-              </div>
-            </li>
-            <li>
-              <div class="collection-card has-before hover:shine">
-                <h2 class="h2 card-title">Exclusive Products</h2>
-                <p class="card-text">Starting at $7.99</p>
-                <div class="has-bg-image" style="background-image: url('./assets/images/a4.jpg')"></div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
 
       <!-- GLAMBOX SECTION -->
       <div class="container">
@@ -290,7 +161,7 @@ text-align: center;
                   <img src="./assets/images/b3.png" alt="Straight Glam Box" width="540" height="720" loading="lazy"
                     class="img-cover" />
                   <div class="card-actions myactions">
-                    <a href="straight-glam-box.html" class="btn btn-primary" style="
+                    <a href="straight-glam-box.html" class="btn btn-primary myactions" style="
                           background-color: transparent;
                           color: rgb(242, 156, 190);
                         ">More</a>
@@ -309,7 +180,7 @@ text-align: center;
                   <img src="./assets/images/glambox2.png" alt="Body Wave Glam Box" width="540" height="720"
                     loading="lazy" class="img-cover" />
                   <div class="card-actions myactions">
-                    <a href="body-wave-glam-box.html" class="btn btn-primary" style="
+                    <a href="body-wave-glam-box.html" class="btn btn-primary myactions" style="
                           background-color: transparent;
                           color: rgb(242, 156, 190);
                         ">More</a>
@@ -328,7 +199,7 @@ text-align: center;
                   <img src="./assets/images/g4.jpg" alt="Wet Curly Glam Box" width="540" height="720" loading="lazy"
                     class="img-cover" />
                   <div class="card-actions myactions">
-                    <a href="wet-curly-glam-box.html" class="btn btn-primary" style="
+                    <a href="wet-curly-glam-box.html" class="btn btn-primary myactions" style="
                           background-color: transparent;
                           color: rgb(242, 156, 190);
                         ">More</a>
@@ -346,7 +217,7 @@ text-align: center;
                   <img src="./assets/images/g5.jpg" alt="Curly Glam Box" width="540" height="720" loading="lazy"
                     class="img-cover" />
                   <div class="card-actions myactions">
-                    <a href="curly-glam-box.html" class="btn btn-primary" style="
+                    <a href="curly-glam-box.html" class="btn btn-primary myactions" style="
                           background-color: transparent;
                           color: rgb(242, 156, 190);
                         ">More</a>
@@ -363,8 +234,8 @@ text-align: center;
       </div>
     </section>
 
-      <!-- SHOP SECTION -->
-      <div class="container">
+       <!-- SHOP SECTION -->
+       <div class="container">
         <h2 class="h2-section-title hidden1" id="shop" style="color: rgb(242, 156, 190); font-size: 34px;" >
           Our Premium Products
         </h2>
@@ -444,7 +315,8 @@ text-align: center;
                   </div>
                 </div>
               </li>
-                       <li class="scrollbar-item">
+              
+            <li class="scrollbar-item">
               <div class="shop-card">
                 <div class="card-banner img-holder-glam" style="--width: 540; --height: 720">
                   <img src="assets/images/waxstick.png" width="540" height="720" loading="lazy" alt="Wax Sticks"
@@ -819,101 +691,6 @@ Add to Cart
       </div>
     </section>
 
-      <!-- BANNER SECTION -->
-      <section class="section banner" aria-label="banner" data-section>
-        <div class="container">
-          <ul class="banner-list">
-            <li>
-              <div class="banner-card banner-card-1 has-before hover:shine">
-                <p class="card-subtitle" style="color: rgb(0, 0, 0)">
-                  New Collection
-                </p>
-                <h2 class="h2 card-title" style="color: rgb(0, 0, 0)">
-                  Discover Our Products
-                </h2>
-                <a href="#" class="btn btn-secondary" style="
-                      color: rgb(0, 0, 0);
-                      background-color: rgb(242, 156, 190);
-                    ">Explore More</a>
-                <div class="has-bg-image" style="
-                      background-image: url('./assets/images/dfsd.png' );
-                    "></div>
-              </div>
-            </li>
-            <li>
-              <div class="banner-card banner-card-2 has-before hover:shine">
-                <h2 class="h2 card-title" style="color: rgb(255, 255, 255)">
-                  25% off Everything
-                </h2>
-                <p class="card-text" style="color: rgb(255, 255, 255)">
-                  Makeup with extended range in colors for every human.
-                </p>
-                <a href="#" class="btn btn-secondary" style="
-                      color: rgb(0, 0, 0);
-                      background-color: rgb(242, 156, 190);
-                    ">Shop Sale</a>
-                <div class="has-bg-image" style="
-                      background-image: url('./assets/images/banner-2.png');
-                      color: rgb(242, 156, 190);
-                    "></div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- FEATURE SECTION -->
-      <section class="section feature" aria-label="feature" data-section>
-        <div class="container">
-          <h2 class="h2-large section-title" style="color: rgb(242, 156, 190)">
-            Why Shop with Queen Dynasty Studio?
-          </h2>
-          <ul class="flex-list">
-            <li class="flex-item">
-              <div class="feature-card">
-                <img src="./assets/images/feature-1.png" loading="lazy" alt="Community Building" class="card-icon" />
-                <h3 class="h3 card-title" style="color: rgb(242, 156, 190)">
-                  Build a Community
-                </h3>
-                <p class="card-text">
-                  Creating a supportive environment for young entrepreneurs.
-                </p>
-              </div>
-            </li>
-            <li class="flex-item">
-              <div class="feature-card">
-                <img src="./assets/images/feature-2.png" width="204" height="236" loading="lazy" alt="Empowering Women"
-                  class="card-icon" />
-                <h3 class="h3 card-title" style="color: rgb(242, 156, 190)">
-                  Empowering Women
-                </h3>
-                <p class="card-text">
-                  Encouraging women to learn to do hair on their own.
-                </p>
-              </div>
-            </li>
-            <li class="flex-item">
-              <div class="feature-card">
-                <img src="./assets/images/feature-3.png" width="204" height="236" loading="lazy" alt="Sisterhood"
-                  class="card-icon" />
-                <h3 class="h3 card-title" style="color: rgb(242, 156, 190)">
-                  Sisterhood
-                </h3>
-                <p class="card-text">
-                  Building strong relationships with young women in the
-                  Toronto area.
-                </p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- OFFER SECTION -->
-      
-    
-
-
   <div id="added-to-cart-modal" class="modal">
     <div class="modal-content" style="background-color: #000000; border-color: rgb(242, 156, 190); text-align: center;">
       <p style="color: rgb(255, 255, 255);">Item has been added to your cart.</p>
@@ -966,146 +743,90 @@ Add to Cart
       &copy;2024 QDR | All Rights Reserved
     </p>
   </footer>
+
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  
+
   <!-- custom js link -->
   <script src="./assets/js/script.js" defer></script>
-  
+
   <script>
-  document.querySelectorAll('.has-scrollbar a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function(e) {
-          e.preventDefault(); // Prevent default scrolling
-          const target = document.querySelector(this.hash);
-          if (target) {
-              target.scrollIntoView({
-                  behavior: 'smooth' // Optional: Enable smooth scrolling
-              });
-          }
-      });
-  });
-  
-  function showModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'flex';
-  }
-  
-  function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'none';
-  }
-  
-  document.getElementById('added-to-cart-ok-btn').addEventListener('click', () => {
-    closeModal('added-to-cart-modal');
-  });
-  
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  
-  function addToCart(product) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingProduct = cart.find((item) => item.id === product.id);
-  
-    if (existingProduct) {
-      existingProduct.quantity += 1; // Optionally increase quantity
-    } else {
-      cart.push(product);
-      showModal('added-to-cart-modal');
+document.querySelectorAll('.has-scrollbar a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default scrolling
+        const target = document.querySelector(this.hash);
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth' // Optional: Enable smooth scrolling
+            });
+        }
+    });
+});
+
+    function showModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.style.display = 'flex';
     }
   
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartPage();
-  }
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.style.display = 'none';
+    }
   
-  function removeFromCart(productId) {
+    document.getElementById('added-to-cart-ok-btn').addEventListener('click', () => {
+      closeModal('added-to-cart-modal');
+    });
+  
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart = cart.filter((item) => item.id !== productId);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartPage();
-    document
-      .querySelectorAll(`.action-btn[data-id="${productId}"]`)
-      .forEach((button) => {
-        button.classList.remove("active");
-      });
-  }
   
-  function updateCartPage() {
-    const cartContainer = document.getElementById("cart-container");
-    if (!cartContainer) return; // If cart-container is not present, exit the function
+    function addToCart(product) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existingProduct = cart.find((item) => item.id === product.id);
   
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cartContainer.innerHTML = ""; // Clear current cart items
-  
-    cart.forEach((item) => {
-      const itemElement = document.createElement("div");
-      itemElement.innerHTML = `<p>${item.name} - ${item.price} x ${item.quantity}</p>`;
-      cartContainer.appendChild(itemElement);
-    });
-  }
-  
-  document.querySelectorAll(".action-btn[data-id]").forEach((button) => {
-    button.addEventListener("click", (event) => {
-      const target = event.target.closest(".action-btn");
-      const productId = target.getAttribute("data-id");
-      const productName = target.getAttribute("data-name");
-      const productPrice = parseFloat(target.getAttribute("data-price"));
-      const productImage = target.closest(".shop-card").querySelector("img").src;
-  
-      const product = {
-        id: productId,
-        name: productName,
-        price: productPrice,
-        image: productImage,
-        quantity: 1,
-      };
-  
-      if (target.classList.contains("active")) {
-        // Remove from cart
-        removeFromCart(productId);
-        target.classList.remove("active");
+      if (existingProduct) {
+        existingProduct.quantity += 1; // Optionally increase quantity
       } else {
-        // Add to cart
-        addToCart(product);
-        target.classList.add("active");
-        if (target.classList.contains("wishlist-btn")) {
-          window.location.href = "cart.html";
-        }
+        cart.push(product);
+        showModal('added-to-cart-modal');
       }
-    });
-  });
   
-  document.addEventListener("DOMContentLoaded", updateCartPage);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartPage();
+    }
   
-  document.addEventListener('DOMContentLoaded', () => {
-    const carousels = document.querySelectorAll('.carousel');
-  
-    carousels.forEach(carousel => {
-      const leftArrow = carousel.querySelector('.left-arrow');
-      const rightArrow = carousel.querySelector('.right-arrow');
-      const scrollContainer = carousel.querySelector('.has-scrollbar');
-  
-      leftArrow.addEventListener('click', () => {
-        scrollContainer.scrollBy({
-          left: -scrollContainer.clientWidth,
-          behavior: 'smooth'
+    function removeFromCart(productId) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart = cart.filter((item) => item.id !== productId);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartPage();
+      document
+        .querySelectorAll(`.action-btn[data-id="${productId}"]`)
+        .forEach((button) => {
+          button.classList.remove("active");
         });
-      });
+    }
   
-      rightArrow.addEventListener('click', () => {
-        scrollContainer.scrollBy({
-          left: scrollContainer.clientWidth,
-          behavior: 'smooth'
-        });
-      });
-    });
+    function updateCartPage() {
+      const cartContainer = document.getElementById("cart-container");
+      if (!cartContainer) return; // If cart-container is not present, exit the function
   
-    // Add event listeners for the mobile add-to-cart buttons
-    document.querySelectorAll('.add-to-cart-mobile').forEach(button => {
-      button.addEventListener('click', (event) => {
-        const target = event.target.closest('.add-to-cart-mobile');
-        const productId = target.getAttribute('data-id');
-        const productName = target.getAttribute('data-name');
-        const productPrice = parseFloat(target.getAttribute('data-price'));
-        const productImage = target.closest('.shop-card').querySelector('img').src;
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cartContainer.innerHTML = ""; // Clear current cart items
+  
+      cart.forEach((item) => {
+        const itemElement = document.createElement("div");
+        itemElement.innerHTML = `<p>${item.name} - ${item.price} x ${item.quantity}</p>`;
+        cartContainer.appendChild(itemElement);
+      });
+    }
+  
+    document.querySelectorAll(".action-btn[data-id]").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const target = event.target.closest(".action-btn");
+        const productId = target.getAttribute("data-id");
+        const productName = target.getAttribute("data-name");
+        const productPrice = parseFloat(target.getAttribute("data-price"));
+        const productImage = target.closest(".shop-card").querySelector("img").src;
   
         const product = {
           id: productId,
@@ -1115,12 +836,52 @@ Add to Cart
           quantity: 1,
         };
   
-        addToCart(product);
+        if (target.classList.contains("active")) {
+          // Remove from cart
+          removeFromCart(productId);
+          target.classList.remove("active");
+        } else {
+          // Add to cart
+          addToCart(product);
+          target.classList.add("active");
+          if (target.classList.contains("wishlist-btn")) {
+            window.location.href = "cart.html";
+          }
+        }
+      });
+    });
+  
+    document.addEventListener("DOMContentLoaded", updateCartPage);
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const carousels = document.querySelectorAll('.carousel');
+
+  carousels.forEach(carousel => {
+    const leftArrow = carousel.querySelector('.left-arrow');
+    const rightArrow = carousel.querySelector('.right-arrow');
+    const scrollContainer = carousel.querySelector('.has-scrollbar');
+
+    leftArrow.addEventListener('click', () => {
+      scrollContainer.scrollBy({
+        left: -scrollContainer.clientWidth,
+        behavior: 'smooth'
+      });
+    });
+
+    rightArrow.addEventListener('click', () => {
+      scrollContainer.scrollBy({
+        left: scrollContainer.clientWidth,
+        behavior: 'smooth'
       });
     });
   });
+});
+
   </script>
   
+ 
 </body>
 
 </html>

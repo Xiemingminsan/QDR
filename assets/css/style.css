@@ -878,7 +878,7 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-  max-width: 150px;
+  max-width: 220px;
   width: 100%;
   padding: 25px 40px;
   z-index: 6;
@@ -1056,6 +1056,7 @@ body {
   opacity: 1;
   transform: translate(-20px, -50%);
 }
+
 
 .shop-card .card-content {
   padding-block: 20px;

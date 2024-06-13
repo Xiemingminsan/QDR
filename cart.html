@@ -1,544 +1,582 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Queen Dynasty Studio - Cart</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queen Dynasty Studio - Cart</title>
 
-  <!-- favicon -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
-  <!-- custom css link -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- custom css link -->
+    <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!-- google font link -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- preload images -->
-  <link rel="preload" as="image" href="./assets/images/logo.png">
-<style>
+    <!-- preload images -->
+    <link rel="preload" as="image" href="./assets/images/logo.png">
+  <style>
 
-body.blur-background main,
-body.blur-background footer,
-body.blur-background header {
-  filter: blur(5px);
-  pointer-events: none; /* Prevent interactions with blurred background */
-}
-
-body.blur-background #checkout-panel {
-  pointer-events: auto; /* Allow interactions with the panel */
-}
-
-/* Slide-in panel styles */
-.slide-in-panel {
-  position: fixed;
-  right: -100%;
-  top: 70px;
-  width: 300px;
-  background-color: #ffffff;
-  z-index: 1001; /* Ensure panel is above the backdrop */
-  transition: right 0.3s ease;
-  color: rgb(242, 156, 190);
-  padding: 20px;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-  border-radius: 16px;
-  height: 85vh;
-  display: flex;
-  flex-direction: column;
-  align-content: space-around;
-}
-
-.slide-in-panel.open {
-  right: 0;
-}
-
-.slide-in-panel .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  cursor: pointer;
-  color: rgb(242, 156, 190);
-}
-
-.slide-in-panel h3 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.slide-in-panel form {
-  display: flex;
-  flex-direction: column;
-}
-
-.slide-in-panel form input {
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.slide-in-panel form button {
-  background-color: rgb(242, 156, 190);
-  color: rgb(0, 0, 0);
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-/* Ensure modal backdrop is behind the panel */
-.modal-backdrop {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1000; /* Ensure backdrop is below the panel */
-  display: none;
-}
-
-.modal-backdrop.open {
-  display: block;
-}
-
-.quantity-btn {
-  background-color: rgb(242, 156, 190);
-  border: none;
-  padding: 5px 10px;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  font-size: 16px;
-  margin: 0 5px;
-  border-radius: 5px;
-}
-
-/* Styles for the scrollbar items */
-#cart-items .scrollbar-item {
-  border: 1px solid rgb(242, 156, 190);
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-}
-
-/* Styles for the shop card */
-#cart-items .scrollbar-item .shop-card {
-  width: 250px;
-  height: 350px;
-  background-color: #000000;
-  padding: -20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Styles for the images within the scrollbar items */
-#cart-items .scrollbar-item .shop-card img {
-  max-width: 100%;
-  max-height: 270px;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Styles for the card content */
-#cart-items .scrollbar-item .shop-card .card-content {
-  width: 100%;
-  text-align: center;
-}
-
-.quantity {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.quantity input {
-  width: 50px;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 0 5px;
-}
-
-.quantity .quantity-btn {
-  background-color: rgb(242, 156, 190);
-  color: #000;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.quantity .quantity-btn:hover {
-  background-color: rgb(200, 128, 160);
-}
-
-/* Container to hold the main content and footer */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-}
-
-/* Footer styles */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-}
-
-@media (max-width: 768px) {
-  .container__header {
-    position: fixed;
-    width: 90%;
-    z-index: 10;
+  body.blur-background main,
+  body.blur-background footer,
+  body.blur-background header {
+    filter: blur(5px);
+    pointer-events: none; /* Prevent interactions with blurred background */
   }
 
-  .navbar .navbar-list {
-        display: flex;
-        justify-content: center;
-        gap: 45px;
-    }
+  body.blur-background #checkout-panel {
+    pointer-events: auto; /* Allow interactions with the panel */
+  }
 
-  #cart-items .scrollbar-item img {
+  /* Slide-in panel styles */
+  .slide-in-panel {
+    position: fixed;
+    right: -100%;
+    top: 70px;
+    width: 300px;
+    background-color: #ffffff;
+    z-index: 1001; /* Ensure panel is above the backdrop */
+    transition: right 0.3s ease;
+    color: rgb(242, 156, 190);
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+  }
+
+  .slide-in-panel.open {
+    right: 0;
+  }
+
+  .slide-in-panel .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: rgb(242, 156, 190);
+  }
+
+  .slide-in-panel h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .slide-in-panel form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slide-in-panel form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .slide-in-panel form button {
+    background-color: rgb(242, 156, 190);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  /* Ensure modal backdrop is behind the panel */
+  .modal-backdrop {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Ensure backdrop is below the panel */
+    display: none;
+  }
+
+  .modal-backdrop.open {
+    display: block;
+  }
+
+  .quantity-btn {
+    background-color: rgb(242, 156, 190);
+    border: none;
+    padding: 5px 10px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 5px;
+    border-radius: 5px;
+  }
+
+  /* Styles for the scrollbar items */
+  #cart-items .scrollbar-item {
+    border: 1px solid rgb(242, 156, 190);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  /* Styles for the shop card */
+  #cart-items .scrollbar-item .shop-card {
+    width: 250px;
+    height: 350px;
+    background-color: #000000;
+    padding: -20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Styles for the images within the scrollbar items */
+  #cart-items .scrollbar-item .shop-card img {
     max-width: 100%;
+    max-height: 270px;
     height: auto;
     object-fit: contain;
   }
 
-  #cart-items .scrollbar-item .card-content {
-    width: 90%;
+  /* Styles for the card content */
+  #cart-items .scrollbar-item .shop-card .card-content {
+    width: 100%;
     text-align: center;
   }
 
-  .scrollbar-item {
-    min-width: 55% !important;
-    scroll-snap-align: start;
-  }
-
-  .container__main-page {
-    padding-top: 60px;
-  }
-
-  #cart-items {
-    overflow-y: auto;
-  }
-}
-
-.header-actions{
-  margin-top: 10px  ;
-}
-
-.header-top .container {
+  .quantity {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.header-center {
-    flex: 1;
-    display: flex;
     justify-content: center;
-}
+  }
 
-.header-actions {
+  .quantity input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 5px;
+  }
+
+  .quantity .quantity-btn {
+    background-color: rgb(242, 156, 190);
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .quantity .quantity-btn:hover {
+    background-color: rgb(200, 128, 160);
+  }
+
+  /* Container to hold the main content and footer */
+  body {
     display: flex;
-    gap: 15px;
-}
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
-</style>
-  
- </head>
+  main {
+    flex: 1;
+  }
 
-<body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="alert" style="color: rgb(0, 0, 0); background-color: rgb(242, 156, 190);">
-        <p class="alert-text">Thank you for being with us!!</p>
-    </div>
-    <div class="header-top" data-header>
-        <div class="container">
-            <div class="header-center">
-                <a href="index.html" class="logo">
-                    <img src="./assets/images/logo.jpg" width="179" height="26" alt="Glowing">
-                </a>
-            </div>
-            <div class="header-actions">
-              <button id="theme-toggle" class="header-action-btn" aria-label="cart">
-                <a href="index.html">
-                    <ion-icon name="home-outline" aria-hidden="true" style=" color: rgb(242, 156, 190); border-radius: 16;">
-                    </ion-icon>
-                </a>
-            </button> 
-            </div>
-        </div>
-    </div>
-</header>
+  /* Footer styles */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
 
+  @media (max-width: 768px) {
+    .container__header {
+      position: fixed;
+      width: 90%;
+      z-index: 10;
+    }
 
-  <!-- CART -->
-  <main>
-    <section class="section cart" id="cart">
-      <div class="container">
-        <ul id="cart-items" class="has-scrollbar">
-          <!-- Cart items will be dynamically added here -->
-        </ul>
-        <div>
-          <div class="cart-summary">
-            <div class="totals">
-              <br><br>
-              <label>
-                <h1><b>Grand Total</b></h1>
-              </label>
-              <div class="totals-value" id="cart-total"><i><b>0.00</b></i></div>
-            </div>
-            <br>
-            <section>
-              <div id="checkout-btn-container" class="text-center" style="margin: 20px;">
-                <button id="checkout-btn" class="btn btn-primary" style="background-color: rgb(242, 156, 190); color: rgb(0, 0, 0); padding: 10px 20px; font-size: 16px; border-radius: 5px;">Checkout</button>
-              </div>
-            </section>
-          </div>
-        </div>
+    .navbar .navbar-list {
+          display: flex;
+          justify-content: center;
+          gap: 45px;
+      }
+
+    #cart-items .scrollbar-item img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    #cart-items .scrollbar-item .card-content {
+      width: 90%;
+      text-align: center;
+    }
+
+    .scrollbar-item {
+      min-width: 55% !important;
+      scroll-snap-align: start;
+    }
+
+    .container__main-page {
+      padding-top: 60px;
+    }
+
+    #cart-items {
+      overflow-y: auto;
+    }
+  }
+
+  .header-actions{
+    margin-top: 10px  ;
+  }
+
+  .header-top .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .header-center {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+  }
+
+  .header-actions {
+      display: flex;
+      gap: 15px;
+  }
+
+  </style>
+    
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="alert" style="color: rgb(0, 0, 0); background-color: rgb(242, 156, 190);">
+          <p class="alert-text">Thank you for being with us!!</p>
       </div>
-    </section>
-  </main>
-
-  <!-- Slide-in Panel -->
-  <div class="modal-backdrop"></div>
-  <div id="checkout-panel" class="slide-in-panel">
-    <span class="close-btn" onclick="closePanel()">&times;</span>
-    <h3 class="h3 section-title" style="color: rgb(242, 156, 190);">Checkout Information</h3>
-    <form id="checkout-details">
-      <input type="text" id="name" name="name" placeholder="Name" required>
-      <input type="email" id="email" name="email" placeholder="Email" required>
-      <input type="number" id="phone" name="phone" placeholder="Phone Number" required>
-      <input type="text" id="address" name="address" placeholder="Address" required>
-      <input type="text" id="city" name="city" placeholder="City" required>
-      <input type="text" id="state" name="state" placeholder="State" required>
-      <input type="text" id="zip" name="zip" placeholder="Zip Code" required>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-  <div id="alert-modal" class="modal">
-    <div class="modal-content" style="background-color: #000000; border-color: rgb(242, 156, 190);">
-      <p style="color: rgb(255, 255, 255);">Your order has been placed. You will be contacted shortly.</p>
-      <button id="modal-ok-btn" style="background-color: rgb(242, 156, 190); color: rgb(0, 0, 0);">OK</button>
-    </div>
-  </div>
-
-  <div id="cart-empty-modal" class="modal">
-    <div class="modal-content" style="background-color: #000000; border-color: rgb(242, 156, 190);">
-      <p style="color: rgb(255, 255, 255);">Your cart is empty. Please add items to your cart before checking out.</p>
-      <button id="cart-empty-ok-btn" style="background-color: rgb(242, 156, 190); color: rgb(0, 0, 0); ">OK</button>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="footer cartfooter">
-    <hr style="color: rgb(242, 156, 190); background-color: rgb(242, 156, 190);">
-    <br>
-    <div class="waves">
-      <div class="wave" id="wave1"></div>
-      <div class="wave" id="wave2"></div>
-      <div class="wave" id="wave3"></div>
-      <div class="wave" id="wave4"></div>
-    </div>
-    <ul class="social-icon">
-      <li class="social-icon__item">
-        <a class="social-icon__link" href="https://www.instagram.com/queendynastystudio?igsh=dGR4NzU0eHM5bHli&utm_source=qr">
-          <ion-icon name="logo-instagram" style="color: rgb(242, 156, 190);"></ion-icon>
-        </a>
-      </li>
-      <li class="social-icon__item">
-        <a class="social-icon__link" href="https://youtube.com/@queendynastystudios9077?si=S6zqgQlv2zZ9ijgQ">
-          <ion-icon name="logo-youtube" style="color: rgb(242, 156, 190);"></ion-icon>
-        </a>
-      </li>
-      <li class="social-icon__item">
-        <a class="social-icon__link" href="https://www.tiktok.com/@queendynastystudios?_t=8msNxPjSJi1&_r=1">
-          <ion-icon name="logo-tiktok" style="color: rgb(242, 156, 190);"></ion-icon>
-        </a>
-      </li>
-    </ul>
-    <p style="text-align: center; display: flex; justify-content: center; margin-top: 2px; color: rgb(242, 156, 190);">
-      &copy;2024 QDR | All Rights Reserved
-    </p>
-  </footer>
-
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("to52LqUt1QWtFj2cC");
-    })();
-  </script>
-
-<script>document.addEventListener('DOMContentLoaded', () => {
-  const checkoutBtn = document.getElementById('checkout-btn');
-  const checkoutPanel = document.getElementById('checkout-panel');
-  const closeBtn = document.querySelector('.close-btn');
-  const alertModal = document.getElementById('alert-modal');
-  const modalOkBtn = document.getElementById('modal-ok-btn');
-  const body = document.querySelector('body');
-  const cartEmpty= document.getElementById('cart-empty-modal');
-
-  checkoutBtn.addEventListener('click', () => {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    if (cart.length === 0) {
-      showModal('cart-empty-modal');
-
-      return;
-    }
-    openPanel();
-  });
-
-  closeBtn.addEventListener('click', closePanel);
-
-  document.addEventListener('click', (event) => {
-    if (checkoutPanel.classList.contains('open') && !checkoutPanel.contains(event.target) && event.target !== checkoutBtn) {
-      closePanel();
-    }
-  });
-
-  cartEmpty.addEventListener('click', () => {
-    closeModal('cart-empty-modal');
-  });
-
-  modalOkBtn.addEventListener('click', () => {
-    closeModal('alert-modal');
-    clearCart();
-    window.location.href = 'index.html'; // Redirect to home page
-  });
-
-  document.getElementById('checkout-details').addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent default form submission
-
-    // Show alert modal
-    showModal('alert-modal');
-    closePanel();
-  });
-
-  function openPanel() {
-    body.classList.add('blur-background');
-    checkoutPanel.classList.add('open');
-  }
-
-  function closePanel() {
-    body.classList.remove('blur-background');
-    checkoutPanel.classList.remove('open');
-  }
-
-  function showModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'flex';
-  }
-
-  function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'none';
-  }
-
-  function clearCart() {
-    localStorage.removeItem('cart');
-    displayCartItems();
-  }
-
-  function displayCartItems() {
-    const cartContainer = document.getElementById('cart-items');
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cartContainer.innerHTML = ''; // Clear current cart items
-    cart.forEach(item => {
-      const itemElement = document.createElement('li');
-      itemElement.classList.add('scrollbar-item');
-      itemElement.innerHTML = `
-        <div class="shop-card">
-          <div class="card-banner img-holder">
-            <img src="${item.image}" loading="lazy" alt="${item.name}" class="img-cover">
-            <div class="card-actions">
-              <button class="action-btn" aria-label="remove from cart" onclick="removeFromCart('${item.id}')">
-                <ion-icon name="trash-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
-              </button>
-            </div>
+      <div class="header-top" data-header>
+          <div class="container">
+              <div class="header-center">
+                  <a href="index.html" class="logo">
+                      <img src="./assets/images/logo.jpg" width="179" height="26" alt="Glowing">
+                  </a>
+              </div>
+              <div class="header-actions">
+                <button id="theme-toggle" class="header-action-btn" aria-label="cart">
+                  <a href="index.html">
+                      <ion-icon name="home-outline" aria-hidden="true" style=" color: rgb(242, 156, 190); border-radius: 16;">
+                      </ion-icon>
+                  </a>
+              </button> 
+              </div>
           </div>
-          <div class="card-content">
-            <h3><a href="#" class="card-title" style="color: rgb(255, 255, 255);">${item.name}</a></h3>
-            <div class="price"><span class="span" style="color: rgb(255, 255, 255);">${item.price}</span></div>
-            <div class="quantity">
-              <button class="quantity-btn" onclick="decreaseQuantity('${item.id}')">-</button>
-              <input style="background-color: white; color: black;" type="number" min="1" value="${item.quantity}" onchange="updateCartItemQuantity('${item.id}', this.value)">
-              <button class="quantity-btn" onclick="increaseQuantity('${item.id}')">+</button>
+      </div>
+  </header>
+
+
+    <!-- CART -->
+    <main>
+      <section class="section cart" id="cart">
+        <div class="container">
+          <ul id="cart-items" class="has-scrollbar">
+            <!-- Cart items will be dynamically added here -->
+          </ul>
+          <div>
+            <div class="cart-summary">
+              <div class="totals">
+                <br><br>
+                <label>
+                  <h1><b>Grand Total</b></h1>
+                </label>
+                <div class="totals-value" id="cart-total"><i><b>0.00</b></i></div>
+              </div>
+              <br>
+              <section>
+                <div id="checkout-btn-container" class="text-center" style="margin: 20px;">
+                  <button id="checkout-btn" class="btn btn-primary" style="background-color: rgb(242, 156, 190); color: rgb(0, 0, 0); padding: 10px 20px; font-size: 16px; border-radius: 5px;">Checkout</button>
+                </div>
+              </section>
             </div>
-            <div class="total-price"><span class="span" style="color: rgb(0, 0, 0);"><i><b>${(item.price * item.quantity).toFixed(2)}</i></b></span></div>
           </div>
         </div>
-      `;
-      cartContainer.appendChild(itemElement);
-    });
-    calculateTotal();
-  }
+      </section>
+    </main>
 
-  function calculateTotal() {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    document.getElementById('cart-total').innerText = `${total.toFixed(2)}`;
-  }
+    <!-- Slide-in Panel -->
+    <div class="modal-backdrop"></div>
+    <div id="checkout-panel" class="slide-in-panel">
+      <span class="close-btn" onclick="closePanel()">&times;</span>
+      <h3 class="h3 section-title" style="color: rgb(242, 156, 190);">Checkout Information</h3>
+      <form id="checkout-details">
+        <input type="text" id="name" name="name" placeholder="Name" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="number" id="phone" name="phone" placeholder="Phone Number" required>
+        <input type="text" id="address" name="address" placeholder="Address" required>
+        <input type="text" id="city" name="city" placeholder="City" required>
+        <input type="text" id="state" name="state" placeholder="State" required>
+        <input type="text" id="zip" name="zip" placeholder="Zip Code" required>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="alert-modal" class="modal">
+      <div class="modal-content" style="background-color: #000000; border-color: rgb(242, 156, 190);">
+        <p style="color: rgb(255, 255, 255);">Your order has been placed. You will be contacted shortly.</p>
+        <button id="modal-ok-btn" style="background-color: rgb(242, 156, 190); color: rgb(0, 0, 0);">OK</button>
+      </div>
+    </div>
 
-  function removeFromCart(productId) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart = cart.filter(item => item.id !== productId);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    displayCartItems();
-  }
+    <div id="cart-empty-modal" class="modal">
+      <div class="modal-content" style="background-color: #000000; border-color: rgb(242, 156, 190);">
+        <p style="color: rgb(255, 255, 255);">Your cart is empty. Please add items to your cart before checking out.</p>
+        <button id="cart-empty-ok-btn" style="background-color: rgb(242, 156, 190); color: rgb(0, 0, 0); ">OK</button>
+      </div>
+    </div>
 
-  function decreaseQuantity(productId) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart = cart.map(item => {
-      if (item.id === productId && item.quantity > 1) {
-        item.quantity -= 1;
+    <!-- FOOTER -->
+    <footer class="footer cartfooter">
+      <hr style="color: rgb(242, 156, 190); background-color: rgb(242, 156, 190);">
+      <br>
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+      <ul class="social-icon">
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="https://www.instagram.com/queendynastystudio?igsh=dGR4NzU0eHM5bHli&utm_source=qr">
+            <ion-icon name="logo-instagram" style="color: rgb(242, 156, 190);"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="https://youtube.com/@queendynastystudios9077?si=S6zqgQlv2zZ9ijgQ">
+            <ion-icon name="logo-youtube" style="color: rgb(242, 156, 190);"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="https://www.tiktok.com/@queendynastystudios?_t=8msNxPjSJi1&_r=1">
+            <ion-icon name="logo-tiktok" style="color: rgb(242, 156, 190);"></ion-icon>
+          </a>
+        </li>
+      </ul>
+      <p style="text-align: center; display: flex; justify-content: center; margin-top: 2px; color: rgb(242, 156, 190);">
+        &copy;2024 QDR | All Rights Reserved
+      </p>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function () {
+    emailjs.init("to52LqUt1QWtFj2cC");
+  })();
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const checkoutBtn = document.getElementById('checkout-btn');
+    const checkoutPanel = document.getElementById('checkout-panel');
+    const closeBtn = document.querySelector('.close-btn');
+    const alertModal = document.getElementById('alert-modal');
+    const modalOkBtn = document.getElementById('modal-ok-btn');
+    const body = document.querySelector('body');
+    const cartEmpty = document.getElementById('cart-empty-modal');
+
+    checkoutBtn.addEventListener('click', () => {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (cart.length === 0) {
+        showModal('cart-empty-modal');
+        return;
       }
-      return item;
+      openPanel();
     });
-    localStorage.setItem('cart', JSON.stringify(cart));
-    displayCartItems();
-  }
 
-  function increaseQuantity(productId) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart = cart.map(item => {
-      if (item.id === productId) {
-        item.quantity += 1;
+    closeBtn.addEventListener('click', closePanel);
+
+    document.addEventListener('click', (event) => {
+      if (checkoutPanel.classList.contains('open') && !checkoutPanel.contains(event.target) && event.target !== checkoutBtn) {
+        closePanel();
       }
-      return item;
     });
-    localStorage.setItem('cart', JSON.stringify(cart));
+
+    cartEmpty.addEventListener('click', () => {
+      closeModal('cart-empty-modal');
+    });
+
+    modalOkBtn.addEventListener('click', () => {
+      closeModal('alert-modal');
+      clearCart();
+      window.location.href = 'index.html'; // Redirect to home page
+    });
+
+    document.getElementById('checkout-details').addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent default form submission
+      showModal('alert-modal');
+      closePanel();
+    });
+
+    function openPanel() {
+      body.classList.add('blur-background');
+      checkoutPanel.classList.add('open');
+    }
+
+    function closePanel() {
+      body.classList.remove('blur-background');
+      checkoutPanel.classList.remove('open');
+    }
+
+    function showModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.style.display = 'flex';
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.style.display = 'none';
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+      displayCartItems();
+    }
+
+    function displayCartItems() {
+      const cartContainer = document.getElementById('cart-items');
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cartContainer.innerHTML = ''; // Clear current cart items
+      cart.forEach(item => {
+        const itemElement = document.createElement('li');
+        itemElement.classList.add('scrollbar-item');
+        itemElement.innerHTML = `
+          <div class="shop-card">
+            <div class="card-banner img-holder">
+              <img src="${item.image}" loading="lazy" alt="${item.name}" class="img-cover">
+              <div class="card-actions">
+                <button class="action-btn remove-btn" aria-label="remove from cart" data-id="${item.id}">
+                  <ion-icon name="trash-outline" aria-hidden="true" style="color: rgb(242, 156, 190);"></ion-icon>
+                </button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3><a href="#" class="card-title" style="color: rgb(255, 255, 255);">${item.name}</a></h3>
+              <div class="price"><span class="span" style="color: rgb(255, 255, 255);">${item.price}</span></div>
+              <div class="quantity">
+                <button class="quantity-btn decrease-btn" data-id="${item.id}">-</button>
+                <input style="background-color: white; color: black;" type="number" min="1" value="${item.quantity}" data-id="${item.id}">
+                <button class="quantity-btn increase-btn" data-id="${item.id}">+</button>
+              </div>
+              <div class="total-price"><span class="span" style="color: rgb(0, 0, 0);"><i><b>${(item.price * item.quantity).toFixed(2)}</i></b></span></div>
+            </div>
+          </div>
+        `;
+        cartContainer.appendChild(itemElement);
+      });
+      addEventListenersToButtons();
+      calculateTotal();
+    }
+
+    function addEventListenersToButtons() {
+      document.querySelectorAll('.remove-btn').forEach(button => {
+        button.addEventListener('click', event => {
+          const productId = event.target.closest('.remove-btn').dataset.id;
+          removeFromCart(productId);
+        });
+      });
+
+      document.querySelectorAll('.decrease-btn').forEach(button => {
+        button.addEventListener('click', event => {
+          const productId = event.target.closest('.decrease-btn').dataset.id;
+          decreaseQuantity(productId);
+        });
+      });
+
+      document.querySelectorAll('.increase-btn').forEach(button => {
+        button.addEventListener('click', event => {
+          const productId = event.target.closest('.increase-btn').dataset.id;
+          increaseQuantity(productId);
+        });
+      });
+
+      document.querySelectorAll('.quantity input').forEach(input => {
+        input.addEventListener('change', event => {
+          const productId = event.target.dataset.id;
+          const newQuantity = parseInt(event.target.value, 10);
+          updateCartItemQuantity(productId, newQuantity);
+        });
+      });
+    }
+
+    function calculateTotal() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      document.getElementById('cart-total').innerText = `${total.toFixed(2)}`;
+    }
+
+    function removeFromCart(productId) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart = cart.filter(item => item.id !== productId);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCartItems();
+    }
+
+    function decreaseQuantity(productId) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart = cart.map(item => {
+        if (item.id === productId && item.quantity > 1) {
+          item.quantity -= 1;
+        }
+        return item;
+      });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCartItems();
+    }
+
+    function increaseQuantity(productId) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart = cart.map(item => {
+        if (item.id === productId) {
+          item.quantity += 1;
+        }
+        return item;
+      });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCartItems();
+    }
+
+    function updateCartItemQuantity(productId, newQuantity) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart = cart.map(item => {
+        if (item.id === productId) {
+          item.quantity = newQuantity;
+        }
+        return item;
+      });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCartItems();
+    }
+
     displayCartItems();
-  }
-
-  displayCartItems();
-});
-
-
-
-
+  });
 </script>
 
 
   </body>
-</html>
+  </html>
